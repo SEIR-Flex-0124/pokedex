@@ -5,6 +5,12 @@ const app = express();
 
 const PORT:number=4000;
 
+app.set("view engine", "ejs");
+
+app.use(express.static("public"));
+
+app.use(express.urlencoded({extended:false}));
+
 const models = require("./models")
 const {pokemon} = models;
 
