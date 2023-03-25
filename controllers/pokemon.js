@@ -4,7 +4,7 @@ const pokemon = require('../models/pokemon');
 
 router.get('/pokemon', (req, res) =>{
     res.render('pokemon/index.ejs', {pokemon: pokemon})
-});
+})
 
 router.get('/pokemon/new', (req,res) =>{
     res.render("pokemon/new.ejs")
@@ -21,4 +21,4 @@ router.post('/pokemon', (req, res) =>{
     res.redirect('/pokemon');
 })
 
-module.exports = router; 
+module.exports = router;

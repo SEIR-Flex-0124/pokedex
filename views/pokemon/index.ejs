@@ -1,8 +1,8 @@
 <%- include('../header.ejs') %>
     <h1>This is an index of Pokemon</h1>
     <% for(let i = 0; i < pokemon.length; i++) { %>
-        <a href="/pokemon/<% i %>">
-            <img src=<%= pokemon[i].image %> alt='pokemon picture'>
+        <a href="/pokemon/<%= i %>">
+            <img src=<%= pokemon[i].img %> alt='pokemon picture'>
             <h3>Name: <%= pokemon[i].name %></h3>
         </a>
         <hr>
