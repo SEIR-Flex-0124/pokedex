@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Each Pokemon</title>
+</head>
+<body>
+    <h1> <%=pokemon.name %></h1>
+    <div><img src=<%= pokemon.img %> alt="pokemon pic" width="300px"></div>
+    <div>
+        <p>Type:</p>
+        <ul>
+            <% for(let i=0; i<pokemon.type.length; i++) { %>
+            <li><%=pokemon.type[i] %></li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
+        <p>Stats:
+            <% let pokemonStats = pokemon.stats; %>
+            <%= pokemonStats[0] %>
+        </p>
+        
+    </div>
+    
+</body>
+</html>
