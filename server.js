@@ -1,39 +1,33 @@
-const express = require('express')
-const app = express()
-const methodOverride = require('method-override')
 
-app.get('/', (req, res) => {
-    res.send("Hello World!")
-})
+const express = require("express");
+const app = express();
+const port = 4000;
+const pokemon = require("./models/pokemon.js");
 
-app.get('/pokemon', (req, res) => {
-    res.send('poke e mans')
-})
+// Middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
+
+// Routes
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+    }
+);
+
+// Pokemon Index
+app.get("/pokemon", (req, res) => {
+    res.render("index.ejs", { pokemon: pokemon });
+    }
+);
 
 app.get('/pokemon/:id', (req, res) => {
-    res.send('poke e mans')
+    const id = req.params.id
+    const singlePokemon = pokemon.find(p=>p.id == id)
+    res.render('show.ejs', {singlePokemon})
 })
 
-app.get('/pokemon/new', (req, res) => {
-    res.send('poke e mans')
-})
-
-app.get('/pokemon/:id/edit', (req, res) => {
-    res.send('poke e mans')
-})
-
-app.post('/pokemon/', (req, res) => {
-    res.send('poke e mans')
-})
-
-app.put('/pokemon/:id', (req, res) => {
-    res.send('poke e mans')
-})
-
-app.delete('/pokemon/:id', (req, res) => {
-    res.send('poke e mans')
-})
-
-app.listen(4000, () => {
-    console.log('Listening on port 4000')
-})
+// Listen
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
+    }
+);

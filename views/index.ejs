@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Pokedex</title>
+    </head>
+    <body>
+        <h1>Pokedex</h1>
+        <ul>
+        <% for (var i = 0; i < pokemon.length; i++) { %>
+            <li>
+                <a href="/pokemon/<%= pokemon[i].id %>"><img src="<%= pokemon[i].img %>"
+                    alt="<%= pokemon[i].name %>">
+            </a>
+            </li>
+        <% } %>
+        </ul>
+    </body>
+</html>
