@@ -126,3 +126,56 @@ header {
     align-items: center;
     justify-content: center;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.buttons {
+    height: 200px;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dpad {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform: scale(1.5);
+}
+
+.dpad div {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #a0a0a0;
+    border: 2px solid #606060;
+}
+
+.dpad-up {
+    top: -1px;
+    left: 20px;
+}
+
+.dpad-down {
+    bottom: -5px;
+    left: 20px;
+}
+
+.dpad-left {
+    top: 20px;
+    left: -1px;
+}
+
+.dpad-right {
+    top: 20px;
+    right: -5px;
+}
+
+.dpad-middle {
+    top: 20px;
+    left: 20px;
+}
