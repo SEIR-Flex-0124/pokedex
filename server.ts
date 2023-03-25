@@ -18,6 +18,10 @@ app.get("/api",(req:Request,res:Response)=>{
     res.send(models)
 })
 
+app.get("/",(req:Request,res:Response)=>{
+    res.redirect("/pokemon")
+})
+
 app.listen(PORT,()=>{
     console.log(`Now listening at PORT ${PORT}...`)
 })
