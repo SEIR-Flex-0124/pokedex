@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-app.use('/pokedex', pokedexController);
+app.use('', pokedexController);
 
 app.listen(port, () => {
     console.log(`Gotta Catch Em' All On Port ${port}`);
