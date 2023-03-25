@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Index</title>
+</head>
+<body>
+    <div class ='container'>
+        <h1>Pokedex:</h1>
+        <button onclick = "window.location.href='http://localhost:4000/pokemon/new';">Register a New Pokemon</button>
+        <% for(let i = 0; i < pokemon.length; i++){ %>
+        <table>
+            <tr><a href="/pokemon/<%= pokemon[i].id %>"><img src="<%= pokemon[i].img %>"
+                alt="<%= pokemon[i].name %>">
+                </a></tr>
+        </tr>
+        </table>
+    <% } %>
+    </div>
+</body>
+</html>
