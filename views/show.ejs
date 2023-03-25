@@ -13,7 +13,10 @@
 <p>Attack: <%= pokemon.stats.attack %></p>
 <p>Defense: <%= pokemon.stats.defense %></p>
 <a href="/pokemon/edit/<%= id %>/">
-    <h3>Edit This Pokémon</h3>
+    <h3>Edit This Pokémon Entry</h3>
+</a>
+<a href="/pokemon/delete/<%= id %>/">
+    <h3>Delete This Pokémon Entry</h3>
 </a>
 <a href="/pokemon"><h3>Back to Pokédex!</h3></a>
 </body>
