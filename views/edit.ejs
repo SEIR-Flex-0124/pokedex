@@ -1,0 +1,33 @@
+<%- include('./header.ejs', {name: 'Edit' +  pokemon.name }) %>
+<h1>Edit <%= pokemon.name %> Entry</h1>
+    <h2>You think we got our entries wrong? Submit your changes here:</h2>
+<form method="POST" action="/pokemon/<%= id %>?_method=PUT">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="<%= pokemon.name %>"></input>
+    <br>
+    <label for="img">Image URL:</label>
+    <input type="text" id="img" name="img" value="<%= pokemon.img %>"></input>
+    <br>
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" value="<%= pokemon.type %>"></input>
+    <br>
+    <label for="statList">Stats:</label>
+    <ul id="statList" name="statList">
+        <li>
+        <label for="hp">HP</label>
+        <input type="text" id="hp" name="hp" value="<%= pokemon.stats.hp %>"></input>
+        </li>
+        <li>
+        <label for="atk">Attack:</label>
+        <input type="text" id="atk" name="atk" value="<%= pokemon.stats.attack %>"></input>
+        </li>
+        <li>
+        <label for="def">Defense:</label>
+        <input type="text" id="def" name="def" value="<%= pokemon.stats.defense %>"></input>
+        </li>
+    </ul>
+    <label for="submit">Are you sure?</label>
+    <input type="submit" id="submit" name="submit" value="Do it, Prof. Oak!">
+</form>
+</body>
+</html>

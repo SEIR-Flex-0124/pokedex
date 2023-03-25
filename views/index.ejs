@@ -1,0 +1,14 @@
+<%- include('./header.ejs', {name: 'Pokédex'}) %>
+
+<h1>Welcome to the World of Pokémon!</h1>
+<h2>Found a new pokemon? Go <a href="/pokemon/new">here</a>!</h2>
+<br>
+<% for(let i = 0; i < pokemon.length; i++) { %>
+<a href="/pokemon/<%= i %>">
+<h2><%= pokemon[i].name %></h2>
+<img src="<%= pokemon[i].img %>" alt="<%= pokemon.name %> image">
+</a>
+<% } %>
+    
+</body>
+</html>
