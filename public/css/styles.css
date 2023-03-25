@@ -179,3 +179,130 @@ a {
     top: 20px;
     left: 20px;
 }
+
+.ab {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+}
+.aButton, .bButton {
+    margin: 10px;
+}
+
+.buttonA, .buttonB {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #606060;
+    color: #A0A0A0;
+    font-size: larger;
+}
+.up, .down, .left, .right {
+    height: 100%;
+    width: 100%;
+    background-color: #A0A0A0;
+}
+
+.buttons2 {
+    display: flex;
+    padding-bottom: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectDiv, .startDiv, .addDiv, .removeDiv {
+    margin: 0 10px;
+}
+
+.select, .start, .add, .remove {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    height: 30px;
+    width: 70px;
+    background-color: #606060;
+    color: #A0A0A0;
+    position: relative;
+    border-radius: 10px;
+}
+.selected {
+    background-color: #ffa500;
+    color: black;
+
+}
+
+.leftDiv, .rightDiv {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 400px;
+    height: 600px;
+    background-color: #28aafa;
+    z-index: -1;
+    border-radius: 20px;
+    background-color:#606060 ;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .leftDiv {
+    top: 25%;
+    transform-origin: left;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rightDiv {
+    top: 25%;
+    transform-origin: right;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leftDivInside, .rightDivInside {
+    height: 580px;
+    width: 380px;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #c92438;
+    background: -webkit-linear-gradient(to right, #c92438, #a50026);
+    background: linear-gradient(to right, #c92438, #a50026);
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .leftScreenBorder {
+    border: solid 1px black;
+    height: 400px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada ;
+  }
+
+  .leftScreen {
+    border: solid 1px black;
+    height: 380px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:white ;
+  }
+
+  .leftButtons {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    justify-content: space-around;
+    width: 300px;
+  }
+
