@@ -22,3 +22,107 @@ header {
     background: #c92438;
 }
 
+.top {
+    height: 80px;
+    width: 425px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.blue {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #28aafa;
+}
+
+.ryg {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-top: 20px;
+    align-self: flex-start;
+}
+
+.red, .yellow, .green {
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 2px
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.topName {
+    height: 40px;
+    width: 225px;
+    margin-left: 50px;
+    border-radius: 20px;
+    background-color: #2fdc0d;
+    border: 1px solid black;
+}
+
+.screenBorder {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dadada;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+.screen {
+    font-family: 'Orbitron', sans-serif;
+    width: 360px;
+    height: 360px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headerDiv {
+    background-color: antiquewhite;
+    height: 60px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slide Show Div */
+
+.slideshow {
+    height: 200px;
+    width: 200px;
+}
+
+.footerDiv {
+    background-color: antiquewhite;
+    height: 60px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
