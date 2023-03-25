@@ -2,13 +2,12 @@
     <h1>Pokemon characters</h1>
     <% for(let i = 0; i < pokemon.length; i++) { %>
         <a href="/pokemon/<%= i %>">
-            <h3>Name: <%= pokemon[i].name %></h3>
+            <h3>Name: <%= pokemon[i].name %></h3> </a>
             <img src=<%= pokemon[i].img %> alt="pokemon picture">
             <h4>ID: <%= pokemon[i].id %></h3>
-            <h4>Type: <%= pokemon[i].type %></h3>
-            <h4>Stats: <%= pokemon[i].stats %></h3>
-            <h4>Moves: <%= pokemon[i].moves %></h3>
-            <h4>Damages: <%= pokemon[i].damages%></h3>
-            <h4>Misc: <%= pokemon[i].misc%></h3>
+            <h4>Type: <% pokemon[i].type.map(el => { %>
+                <h4><%= el %></h4>
+            <% }) %>
         <hr>
     <% } %>
+    

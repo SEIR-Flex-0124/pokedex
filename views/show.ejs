@@ -4,9 +4,5 @@
     <img src=<%= pokemons.img %> alt="pokemon picture">
     <h4>ID: <%= pokemons.id %></h3>
     <h4>Type: <%= pokemons.type %></h3>
-    <h4>Stats: <%= pokemons.stats %></h3>
-    <h4>Moves: <%= pokemons.moves %></h3>
-    <h4>Damages: <%= pokemons.damages%></h3>
-    <h4>Misc: <%= pokemons.misc%></h3>
-    
-<!-- <%- include('./partials/footer.ejs') %> -->
+    <a href="/pokemon/edit/<%= idx %>">click edit</a>
+<%- include('./partials/footer.ejs') %>
