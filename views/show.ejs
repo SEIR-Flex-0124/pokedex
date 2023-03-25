@@ -1,6 +1,14 @@
 <%- include('./partials/header.ejs') %>
 <h2><%= singlePoke.name %></h2>
-    <img src=<%= singlePoke.img %> alt="pic of Pokemon">
-    <h3><%= singlePoke.type %></h3>
-
+    <ul>TYPE:
+        <% for(let i = 0; i < singlePoke.type.length; i++) { %>
+            <li><%= singlePoke.type[i] %></li>
+        <% } %>
+    </ul>
+<img src=<%= singlePoke.img %> alt="pic of Pokemon">
+<p>HP: <%= singlePoke.stats.hp %></p>
+<p>ATTACK: <%= singlePoke.stats.attack %></p>
+<p>DEFENSE: <%= singlePoke.stats.defense %></p>
+<a href="/pokemon">Back to full Pokedex</a> 
+<br>
 <%- include('./partials/footer.ejs') %>
