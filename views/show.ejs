@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=pokemonItem %></title>
+</head>
+<body>
+    <button type="submit"><a href='/pokemon'>Home</a></button>
+    <h1><%=pokemonItem.name %></h1>
+    <div class="container-fluid">
+        <div class="col-sm-4" style="background-color:lavender;">
+        <img src="<%=pokemonItem.img %>">
+        <h4>ID: <%=pokemonItem.id %></h4>
+         </div>
+         <div class="col-sm-4" style="background-color:lavender;">
+            <h4>Type: <%=pokemonItem.type %></h4>
+        </div>
+        <div class="col-sm-4" style="background-color:lavender;">
+            <h4>Stats: <br>
+            hp:<%=pokemonItem.stats.hp %> <br>
+            attack:<%=pokemonItem.stats.attack %> <br>
+            defense:<%=pokemonItem.stats.defense %> <br>
+            spattack:<%=pokemonItem.stats.spattack %> <br>
+            spdefense:<%=pokemonItem.stats.spdefense %> <br>
+            speed:<%=pokemonItem.stats.speed %>
+        </h4>
+        </div>
+        <div class="col-sm-4" style="background-color:lavender;">
+            <h4>Damages: <%=pokemonItem.damages %></h4>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
