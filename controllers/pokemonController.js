@@ -33,8 +33,13 @@ const editPokemon = (req, res) => {
 }
 
 const updatePokemon = (req, res) => {
+  const {name, type,  HP, attack, defense} = req.body  
+  const newBody = {name, type:[type], stats:{hp: HP, attack, defense}}
   const id = req.params.id
-  const newPokemon = req.body
+  const oldPokemon = pokemon.find(p=>p.id == id)
+  console.log(oldPokemon)
+  console.log(req.body)
+  const newPokemon = Object.assign(oldPokemon, newBody)
   let pokeIndex;
   pokemon.map((p, i) => {
     if(p.id === id){
@@ -46,7 +51,7 @@ const updatePokemon = (req, res) => {
 }
 
 
-// Delete Route:
+// // Delete Route:
 // router.delete('/:id', (req, res) => {
 // 	pokemon.splice(req.params.id, 1);
 // 	res.redirect('/pokemon')
