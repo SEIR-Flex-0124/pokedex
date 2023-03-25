@@ -14,8 +14,8 @@ app.use(express.urlencoded({extended:false}));
 const models = require("./models")
 const {pokemon} = models;
 
-app.get("/",(req:Request,res:Response)=>{
-    res.send(pokemon)
+app.get("/api",(req:Request,res:Response)=>{
+    res.send(models)
 })
 
 app.listen(PORT,()=>{
