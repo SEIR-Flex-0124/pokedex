@@ -14,23 +14,33 @@ app.get("/pokemon", (req,res) => {
     res.render("index",{pokemons})
 })
 
+//New
+app.get("/pokemon/new", (req,res) => {
+    res.render("new");
+})
+
 //Show
 app.get("/pokemon/:id", (req,res) => {
     let pokemon = pokemons[req.params.id]
     res.render("show", {pokemon: pokemon})
 })
 
-//New
-app.get("pokemon/new", (req,res) => {
-    
-})
-
-
 
 //Global wrong pages
 app.get("/*", (req,res) => {
     res.send("Wrong link!")
 })
+
+
+//Post
+app.post("/pokemon",(req,res) => {
+    let newPokemon = req.body;
+    pokemons.unshift(newPokemon);
+    res.redirect("/pokemon");
+})
+
+
+
 
 // Listen
 app.listen(3000, () => {
