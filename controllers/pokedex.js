@@ -10,4 +10,8 @@ router.get('/home', (req, res) => {
     res.render('home.ejs', {pokemon: pokemon });
 });
 
+router.get('/pokemon', (req, res) => {
+    res.render('pokemon.ejs', {pokemon: pokemon });
+});
+
 module.exports = router;
