@@ -6,9 +6,10 @@ const app = express();
 const PORT:number=4000;
 
 const models = require("./models")
+const {pokemon} = models;
 
 app.get("/",(req:Request,res:Response)=>{
-    res.send(models)
+    res.send(pokemon)
 })
 
 app.listen(PORT,()=>{
