@@ -2,29 +2,25 @@
 const express = require("express");
 const app = express();
 const port = 4000;
-const pokemon = require("./models/pokemon.js");
+const methodOverride = require('method-override')
+
+// Importing Routers
+const pokemonRouter = require('./routers/pokemonRouter')
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
+app.set('view engine', 'ejs');
+app.use(express.json());
+app.use(express.urlencoded({ extended:false }));
+app.use(express.static('public'));
+app.use(methodOverride('_method'))
 
-// Routes
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-    }
-);
-
-// Pokemon Index
-app.get("/pokemon", (req, res) => {
-    res.render("index.ejs", { pokemon: pokemon });
-    }
-);
-
-app.get('/pokemon/:id', (req, res) => {
-    const id = req.params.id
-    const singlePokemon = pokemon.find(p=>p.id == id)
-    res.render('show.ejs', {singlePokemon})
+app.use((req,res,next) => {
+    console.log('this is my own middleware')
+    next()
 })
+
+// Routes for pokemon
+app.use('/pokemon', pokemonRouter)
 
 // Listen
 app.listen(port, () => {
