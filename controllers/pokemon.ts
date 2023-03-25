@@ -6,7 +6,7 @@ const router = express.Router();
 const {pokemon} = require("../models");
 
 router.get("/",(req:Request,res:Response)=>{
-    res.render("pokemon/index")
+    res.render("pokemon/index", {pokemon})
 })
 
 module.exports=router;
