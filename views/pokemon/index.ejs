@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Pokémon</h1>
+    <div class="pokedex" id="pokedex">
+        <ul class="dex-page-list" id="dex-page-list">
+            <% for( let j = 1, idx = 0; idx < pokemon.length; j++ ) { %>
+                <% const mons = pokemon %>
+                <li class="dex-page" id="dex-page-<%= j %>">
+                    <% while(idx<(j*16)&&(idx < pokemon.length)) { %>
+                        <% const mon = mons[idx] %>
+                        <img src="<%= mon.img %>" height="150" alt="">
+                        <% idx++ %>
+                    <% } %>
+                </li>
+            <% } %>
+        </ul>
+    </div>
 </body>
 </html>
