@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<body>
+    <h1>These are all my pokemon</h1>
+    <% for (let i = 0; i < pokemon.length; i++) { %> 
+        <a href="/pokemon/<%= i %>">
+            <img src=<%= pokemon[i].img %> alt= "pokemon picture">
+            <h3><%= pokemon[i].name %></h3>
+        </a>
+    <% } %>
+    
+</body>
+</html>
+
+
