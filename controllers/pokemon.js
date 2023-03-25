@@ -34,7 +34,7 @@ router.put('/pokemon/:id', (req, res) =>{
 
 router.get('/pokemon/:id/delete', (req, res) =>{
     const pokemonToBeDeleted = pokemon[req.params.id];
-    res.render(`pokemon/delete`, {pokemonToBeDeleted, idx: req.params.id})
+    res.render(`pokemon/delete.ejs`, {pokemonToBeDeleted, idx: req.params.id})
 })
 
 router.delete('/pokemon/:id', (req, res) =>{
