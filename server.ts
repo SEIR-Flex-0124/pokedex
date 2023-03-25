@@ -11,8 +11,11 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({extended:false}));
 
-const models = require("./models")
+const models = require("./models");
 const {pokemon} = models;
+
+const controllers = require("./controllers");
+const pokemonController = controllers.pokemon;
 
 app.get("/api",(req:Request,res:Response)=>{
     res.send(models)
@@ -21,6 +24,8 @@ app.get("/api",(req:Request,res:Response)=>{
 app.get("/",(req:Request,res:Response)=>{
     res.redirect("/pokemon")
 })
+
+app.use("/pokemon",pokemonController);
 
 app.listen(PORT,()=>{
     console.log(`Now listening at PORT ${PORT}...`)
