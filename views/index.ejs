@@ -1,0 +1,11 @@
+<%- include('./header.ejs') %>
+<div class="container">
+  <% for (let i = 0; i <Pokemon.length ; i++){ %>
+    <div class="grid-item"><a href = "/pokemon/<%= i%>"><img style = "width: 50px"  src = "<%= Pokemon[i].img %>"></a> 
+    </div>
+<% } %>
+   
+  </div>
+
+</body>
+</html>

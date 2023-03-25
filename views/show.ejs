@@ -1,0 +1,25 @@
+<%- include('./header.ejs') %>
+<div>
+<h1>
+    Pokedex Entry: <%= singlePokemon.id %>
+    <div class="container">
+        <img src = "<%= singlePokemon.img %>">
+        <h3><%= singlePokemon.name%></h3>
+        <h4>"The <%= singlePokemon.misc.classification %>"</h4>
+        <h2>Types:  </h2>
+            <h5><ul>
+                <% for (let i = 0; i < singlePokemon.type.length; i++) 
+                {%>
+                    <li style = "list-style: none;"><%= singlePokemon.type[i]%></li>
+                <%}%>
+            </ul>
+       </h5>
+       <h4>
+        Height:<%= singlePokemon.misc.height %>
+        Weight: <%= singlePokemon.misc.weight %>
+       </h4>
+    </div>
+</h1>
+</div>
+</body>
+</html>
