@@ -18,22 +18,31 @@ const createNewPokemon = (req, res) => {
     res.redirect('/pokemon')
 }
 
+
+const editPokemon = (req, res) => {
+    const id = req.params.id
+    const singlePokemon = pokemon.find(p=>p.id == id)
+    res.render('edit.ejs', {singlePokemon})
+}
+
+const submitEdit = (req, res) => {
+    pokemon[req.params.id] = req.body;
+    res.redirect('/pokemon')
+}
+
+const deletePokemon = (req, res) => {
+    pokemon.splice(req.params.id, 1);
+    res.redirect('/pokemon')
+}
+
 const showOnePokemon = (req, res) => {
     const id = req.params.id
     const singlePokemon = pokemon.find(p=>p.id == id)
     res.render('show.ejs', {singlePokemon})
 }
 
-const editPokemon = (req, res) => {
-    res.render('edit.ejs', {singlePokemon: pokemon[req.params.indexOfPokemonArray], index: req.params.indexOfPokemonArray})
-}
-
-const submitEdit = (req, res) => {
-    pokemon[req.params.indexOfPokemonArray] = req.body;
-    res.redirect('/pokemon')
-}
 
 
     module.exports = {
-        getAllPokemon, sendNewPokemonForm, createNewPokemon, showOnePokemon, editPokemon, submitEdit
+        getAllPokemon, sendNewPokemonForm, createNewPokemon, showOnePokemon, editPokemon, submitEdit, deletePokemon
     }

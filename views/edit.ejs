@@ -7,7 +7,7 @@
     <title>Edit</title>
 </head>
 <body>
-    <form action="/pokemon/<%=index%>?_method=PUT" method="POST">
+    <form action="/pokemon/<%=singlePokemon.id%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value = "<%= singlePokemon.name%>">
         Type: <input type="text" name="type" value="<%=singlePokemon.type%>"/>
         HP: <input type="text" name="hp" value="<%= singlePokemon.stats.hp%>"/>
