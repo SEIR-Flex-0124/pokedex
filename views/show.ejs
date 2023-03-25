@@ -19,8 +19,11 @@
     </div>
     <div>
         <p>Stats:
-            <% let pokemonStats = pokemon.stats; %>
-            <%= pokemonStats[0] %>
+            <ul>
+                <% for(const stat in pokemon.stats) { %>
+                    <li><%= stat%>: <%=pokemon.stats[stat] %></li>
+                <% } %>                
+            </ul>
         </p>
         
     </div>

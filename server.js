@@ -20,6 +20,10 @@ app.get("/pokemon/:id", (req,res) => {
     res.render("show", {pokemon: pokemon})
 })
 
+//New
+app.get("pokemon/new", (req,res) => {
+    
+})
 
 
 
