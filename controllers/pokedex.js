@@ -5,3 +5,5 @@ const pokemon = require('../models/pokemon');
 router.get('/', (req, res) => {
     res.render('index.ejs', { pokemon: pokemon });
 });
+
+module.exports = router;

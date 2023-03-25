@@ -11,5 +11,5 @@ app.use(express.static('public'));
 app.use('/pokedex', pokedexController);
 
 app.listen(port, () => {
-    console.log(`Server is running on Port ${port}`);
+    console.log(`Gotta Catch Em' All On Port ${port}`);
 });
