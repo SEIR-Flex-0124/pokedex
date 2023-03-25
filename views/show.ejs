@@ -7,15 +7,10 @@
     <title>Pokemon</title>
 </head>
 <body>
-    <h1>These are all my pokemon</h1>
-    <% for (let i = 0; i < pokemon.length; i++) { %> 
-        <a href="/pokemon/<%= i %>">
-            <img src=<%= pokemon[i].img %> alt= "pokemon picture">
-            <h3><%= pokemon[i].name %></h3>
-        </a>
-    <% } %>
-    
+    <h1>This is my individual pokemon</h1>
+    <img src=<%= singlePokemon.img %> alt="pokemon image">
+    <h2>Name: <%= singlePokemon.name %></h2>
+    <a href="/pokemon/<%= idx %>/edit">Edit this Pokemon</a>
+    <a href="/pokemon/<%= idx %>/delete">Delete this Pokemon</a>
 </body>
 </html>
-
-

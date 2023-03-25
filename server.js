@@ -4,16 +4,17 @@ const PORT = 4000;
 const pokemonController = require('./controllers/pokemon');
 
 app.set('view engine', 'ejs');
+app.use('/pokemon', pokemonController);
+
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.render('home.ejs');
 })
-
-app.use('/pokemon', pokemonController);
 
 app.get('/pokemon', (req, res) => {
     res.render('index.ejs')
 })
+
 
 
 app.listen(PORT, () => {

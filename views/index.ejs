@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+<body>
+    <h1>Got To Catch Them All!</h1>
+    <% for (let i = 0; i < pokemon.length; i++) { %> 
+        <a href="/pokemon/<%= i %>">
+            <img src=<%= pokemon[i].img %> alt= "pokemon picture">
+            <h3><%= pokemon[i].name %></h3>
+        </a>
+    <% } %>
+    
+</body>
+</html>
+
+

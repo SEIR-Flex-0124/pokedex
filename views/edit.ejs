@@ -1,0 +1,17 @@
+<%- include('header.ejs') %>
+
+<h1>Edit this Pokemon below: </h1>
+<form method="POST" action="/fruits/<%= idx %>?_method=PUT">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value=<%= pokemonToBeEdited.name %>>
+    <br>
+    <label for="color">Color:</label>
+    <input type="text" name="color" id="color"  value=<%= pokemonToBeEdited.color %>>
+    <br>
+    <label for="img">Image URL: </label>
+    <input type="text" name="image" id="image"  value=<%= pokemonToBeEdited.image %>>
+    <br>
+    <input type="submit" value="Add a Pokemon">
+</form>
+</body>
+</html>
