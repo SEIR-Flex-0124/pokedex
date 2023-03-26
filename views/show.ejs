@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
-</head>
+<%- include('header.ejs', {name: "Got to catch them all!"})%>
 <body>
-    <h1>This is my individual pokemon</h1>
+    
+    <h1><%= singlePokemon.name %>, I choose YOU!</h1>
     <img src=<%= singlePokemon.img %> alt="pokemon image">
-    <h2>Name: <%= singlePokemon.name %></h2>
+    <h2>Type: <%= singlePokemon.type %></h2>
+    <h2>Stats</h2>
+    <h3>HP: <%= singlePokemon.stats.hp %></h3>
+    <h3>Speed: <%= singlePokemon.stats.speed %></h3>
+    <h3>Attack: <%= singlePokemon.stats.attack %></h3>
+    <h3>Defense: <%= singlePokemon.stats.defense %></h3>
+
+
     <a href="/pokemon/<%= idx %>/edit">Edit this Pokemon</a>
     <a href="/pokemon/<%= idx %>/delete">Delete this Pokemon</a>
 </body>

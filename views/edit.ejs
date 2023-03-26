@@ -1,4 +1,4 @@
-<%- include('header.ejs') %>
+<%- include('header.ejs', {name: "Edit this Pokemon"})%>
 
 <h1>Edit this Pokemon below: </h1>
 <form method="POST" action="/fruits/<%= idx %>?_method=PUT">
