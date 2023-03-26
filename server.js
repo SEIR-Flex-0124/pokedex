@@ -34,33 +34,41 @@ app.get('/pokemon/:id', (req, res) => {
 app.post('/pokemon', (req, res) => {
     const name = req.body.name;
     const type = req.body.type.split(',').map(t => t.trim());
-    const abilities = req.body.abilities.split(',').map(a => a.trim());
-    const moves = req.body.moves.split(',').map(m => m.trim());
+    const image = req.body.img;
+    const attack = req.body.stats.attack;
+    const defense = req.body.stats.defense;
+    const speed = req.body.stats.speed;
+    // const abilities = req.body.abilities.split(',').map(a => a.trim());
+    // const moves = req.body.moves.split(',').map(m => m.trim());
   
     const newPokemon = {
       name: name,
       type: type,
-      misc: {
-        abilities: {
-          normal: abilities,
-          hidden: [] // Assuming no hidden abilities for simplicity
-        }
-      },
-      moves: {
-        // Assuming all moves are level-up moves for simplicity
-        level_up: moves.map(move => {
-          return {
-            name: move,
-            level: 1 // Default to level 1, adjust as needed
-          };
-        })
+      img: image,
+      stats: {
+        attack: attack,
+        defense: defense,
+        speed: speed,
       }
-    };
-  
-    data.push(newPokemon);
-  
+    //   misc: {
+    //     abilities: {
+    //       normal: abilities,
+    //       hidden: [] // Assuming no hidden abilities for simplicity
+    //     }
+    //   },
+    //   moves: {
+    //     // Assuming all moves are level-up moves for simplicity
+    //     level_up: moves.map(move => {
+    //       return {
+    //         name: move,
+    //         level: 1 // Default to level 1, adjust as needed
+    //       };
+    //     })
+      }
+    
+    pokemon.push(newPokemon);
     res.redirect('/pokemon');
-  });
+    });
 
 app.get('/:id/edit', (req, res) => {
     const pokemonToBeEdited = pokemon[req.params.id];

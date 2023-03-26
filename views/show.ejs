@@ -6,9 +6,10 @@
         <% } %>
     </ul>
 <img src=<%= singlePoke.img %> alt="pic of Pokemon">
-<p>HP: <%= singlePoke.stats.hp %></p>
-<p>ATTACK: <%= singlePoke.stats.attack %></p>
-<p>DEFENSE: <%= singlePoke.stats.defense %></p>
+<h3>STATS:</h3>
+<p>attack: <%= singlePoke.stats.attack %></p>
+<p>defense: <%= singlePoke.stats.defense %></p>
+<p>speed: <%= singlePoke.stats.speed %></p>
 <a href="/pokemon">Back to full Pokedex</a> 
 <br>
 <%- include('./partials/footer.ejs') %>

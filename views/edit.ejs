@@ -11,7 +11,12 @@
     <input type="text" name="image" id="image" value=<%= pokemonToBeEdited.img %>>
     <br>
     <label for="stats">Stats: </label>
-    <input type="text" name="stats" id="stats" value=<%= pokemonToBeEdited.stats %>>
+    <label for="stats">attack </label>
+    <input type="text" name="attack" id="attack" value=<%= pokemonToBeEdited.stats.attack %>>
+    <label for="stats">defense </label>
+    <input type="text" name="defense" id="defense" value=<%= pokemonToBeEdited.stats.defense %>>
+    <label for="stats">speed </label>
+    <input type="text" name="speed" id="speed" value=<%= pokemonToBeEdited.stats.speed %>>
     <br>
     <input type="submit" value="Add new Pokemon">
 </form>
