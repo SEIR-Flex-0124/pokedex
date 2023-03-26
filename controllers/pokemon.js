@@ -7,7 +7,13 @@ router.get('', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-    res.render('new.ejs')
+    res.render("new.ejs")
+})
+
+router.post('', (req, res) => {
+    let newPokemon = req.body;
+    pokemon.push(newPokemon);
+    res.redirect('/');
 })
 
 router.get('/:id', (req, res) => {
