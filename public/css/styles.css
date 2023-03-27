@@ -154,6 +154,13 @@ a {
     color: black;
 }
 
+/* Pokemon Select */
+
+.pokemonSelect img {
+    height: 250px;
+    width: 250px;
+}
+
 .buttons {
     height: 200px;
     width: 340px;
@@ -246,11 +253,7 @@ a {
     position: relative;
     border-radius: 10px;
 }
-.selected {
-    background-color: #ffa500;
-    color: black;
 
-}
 
 .leftDiv, .rightDiv {
     display: flex;
@@ -303,7 +306,7 @@ a {
 
   .leftScreenBorder {
     border: solid 1px black;
-    height: 400px;
+    height: 450px;
     width: 320px;
     display: flex;
     justify-content: center;
@@ -314,17 +317,141 @@ a {
 
   .leftScreen {
     border: solid 1px black;
-    height: 380px;
+    height: 430px;
     width: 300px;
     border-radius: 10px;
     background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
 
-  .leftButtons {
+.types {
     display: flex;
     flex-direction: row;
-    padding-top: 20px;
-    justify-content: space-around;
-    width: 300px;
-  }
+    align-items: center;
+    justify-content: space-between;
+    width: 80%
+}
 
+.type1, .type2 {
+    border: 1px solid black;
+    padding: 4px 20px;
+}
+
+.Grass {
+    background-color: #77cc5580;
+}
+
+.Fire {
+    background-color: #ff432280;
+}
+
+.Normal {
+    background-color: #aaaa9980;
+}
+
+.Poison {
+    background-color: #aa559980;
+}
+
+.Water {
+    background-color: #3498ff80;
+}
+
+.Electric {
+    background-color: #ffcc3380;
+}
+
+.Ice {
+    background-color: #66ccff80;
+}
+
+.Fighting {
+    background-color: #bb554480;
+}
+
+.Ground {
+    background-color: #ddbb5580;
+}
+
+.Flying{
+    background-color: #8899ff80;
+}
+
+.Psychic{
+    background-color: #ff569980;
+}
+
+.Bug {
+    background-color: #aabb2180;
+}
+
+.Rock {
+    background-color: #bcaa6680;
+}
+
+.Ghost {
+    background-color: #6666bb80;
+}
+
+.Dragon {
+    background-color: #7766ee80;
+}
+
+.stats p {
+    margin-right: 10px;
+    font-size: smaller;
+}
+
+.hp, .attack, .defense, .spattack, .spdefense, .speed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bar {
+    border: 1px solid black;
+    height: 20px;
+    width: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hpFill {
+    height: 100%;
+    background-color: green;
+    opacity: 80%;
+}
+
+.attackFill {
+    height: 100%;
+    background-color: crimson;
+    opacity: 80%;
+}
+
+.defenseFill {
+    height: 100%;
+    background-color: blue;
+    opacity: 80%;
+}
+
+.spattackFill {
+    height: 100%;
+    background-color: darkred;
+    opacity: 80%;
+}
+
+.spdefenseFill {
+    height: 100%;
+    background-color: darkblue;
+    opacity: 80%;
+}
+
+.speedFill {
+    height: 100%;
+    background-color: darkgoldenrod;
+    opacity: 80%;
+}

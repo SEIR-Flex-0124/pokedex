@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <script src="/js/home.js" defer></script>
+    <script src="/js/show.js" defer></script>
 </head>
 <body>
     <header>
@@ -79,6 +79,51 @@
                     <div class="leftScreenBorder">
                         <div class="leftScreen">
                             <!--Pokemon Information Display-->
+                            <h3>Pokédex Data</h3>
+                            <div class="types">
+                                <% for (let i = 0; i < selectedPokemon.type.length; i++) { %>
+                                    <div class="type<%= i + 1 %> <%= selectedPokemon.type[i] %>"><%= selectedPokemon.type[i] %></div>
+                                <% } %>
+                            </div>
+                            <div class="stats">
+                                <h3>Stats</h3>
+                                <div class="hp">
+                                    <p>HP : <%= selectedPokemon.stats.hp %></p>
+                                    <div class="bar">
+                                        <div class="hpFill" style="width: <%= selectedPokemon.stats.hp/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="attack">
+                                    <p>ATK : <%= selectedPokemon.stats.attack %></p>
+                                    <div class="bar">
+                                        <div class="attackFill" style="width: <%= selectedPokemon.stats.attack/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="defense">
+                                    <p>DEF : <%= selectedPokemon.stats.defense %></p>
+                                    <div class="bar">
+                                        <div class="defenseFill" style="width: <%= selectedPokemon.stats.defense/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="spattack">
+                                    <p>SP ATK : <%= selectedPokemon.stats.spattack %></p>
+                                    <div class="bar">
+                                        <div class="spattackFill" style="width: <%= selectedPokemon.stats.spattack/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="spdefense">
+                                    <p>SP DEF : <%= selectedPokemon.stats.spdefense %></p>
+                                    <div class="bar">
+                                        <div class="spdefenseFill" style="width: <%= selectedPokemon.stats.spdefense/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="speed">
+                                    <p>SPD : <%= selectedPokemon.stats.speed %></p>
+                                    <div class="bar">
+                                        <div class="speedFill" style="width: <%= selectedPokemon.stats.speed/2 %>%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

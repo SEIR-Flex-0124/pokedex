@@ -50,3 +50,27 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Remove button clicked');
     });
 });
+
+// Left & Right Div Slide Out
+
+const leftDiv = document.querySelector('.leftDiv');
+const rightDiv = document.querySelector('.rightDiv');
+let slide = true;
+
+// One Second Delay
+
+setTimeout(() => {
+    leftDiv.style.transform = 'translateX(-100%)';
+    rightDiv.style.transform = 'translateX(100%)';
+    slide = true;
+}, 1000);
+
+
+
+// Stat Bar
+
+const hpFill = document.querySelector('.hpFill');
+
+
+
+hpFill.style.width = `${selectedPokemon.stats.hp/2}%`;
