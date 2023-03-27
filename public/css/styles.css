@@ -118,6 +118,28 @@ header {
     width: 200px;
 }
 
+/* Add home.css change here */
+
+
+
+/* Pokemon List Styling */
+.pokeList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemonLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.pokeList img {
+    width: 40px;
+    height: 40px;
+}
+
 .footerDiv {
     background-color: antiquewhite;
     height: 60px;

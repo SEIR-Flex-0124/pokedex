@@ -14,4 +14,11 @@ router.get('/pokemon', (req, res) => {
     res.render('pokemon.ejs', {pokemon: pokemon });
 });
 
+router.get('/pokemon/:id', (req, res) => {
+    const id = req.params.id;
+    const selectedPokemon = pokemon.find(p => p.id === id);
+    console.log(selectedPokemon)
+    res.render('show.ejs', { selectedPokemon });
+});
+
 module.exports = router;
