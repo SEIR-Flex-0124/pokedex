@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= singlePokemon.name %></title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" style="width: 200px;">
+    <h1>Pokedex Entry <%= singlePokemon.id %> </h1>
+    <hr>
+    <div class="container">
+        <h2><%= singlePokemon.name %></h2>
+        <h5>Type: <%= singlePokemon.type %></h5>
+        <img style="height: 150px; width: 150px" src= <%= singlePokemon.img %>>
+        <h3>ID: <%= singlePokemon.id %></h3>
+        <h4>"The <%= singlePokemon.misc.classification %>" </h4>
+        <h5>Normal Ability: <%= singlePokemon.misc.abilities.normal %></h5>
+        <h5>Hidden Ability: <%= singlePokemon.misc.abilities.hidden %></h5>
+        <h5>Height: <%= singlePokemon.misc.height%> Weight: <%= singlePokemon.misc.weight %> lbs</h5>
+        <button onclick = "window.location.href='http://localhost:4000/pokemon';">Return to Home</button>  
+    </div>
+</body>
+</html>
