@@ -225,11 +225,15 @@ a {
     background-color: #606060;
     color: #A0A0A0;
     font-size: larger;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
 }
 .up, .down, .left, .right {
     height: 100%;
     width: 100%;
     background-color: #A0A0A0;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .buttons2 {
@@ -252,6 +256,9 @@ a {
     color: #A0A0A0;
     position: relative;
     border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 
