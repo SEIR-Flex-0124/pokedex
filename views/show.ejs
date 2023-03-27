@@ -28,15 +28,15 @@
             </div>
             <div class="screenBorder">
                 <div class="screen">
-                    <div class="headerDiv">
+                    <div class="headerDiv <%= selectedPokemon.type[0] %>">
                         <h3 class="title"><%= selectedPokemon.name %></h3>
                     </div>
                     <div class="pokemonSelect">
                         <!--Pokémon Select-->
                             <img src="<%= selectedPokemon.img %>">
                     </div>
-                    <div class="footerDiv">
-                        <p>Home</p>
+                    <div class="footerDiv <%= selectedPokemon.type[0] %>">
+                        
                     </div>
                 </div>
             </div>
