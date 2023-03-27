@@ -1,38 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./header.ejs') %>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=pokemonItem %></title>
+    <title><%=pokemonItem.name %></title>
 </head>
 <body>
-    <button type="submit"><a href='/pokemon'>Home</a></button>
-    <h1><%=pokemonItem.name %></h1>
-    <div class="container-fluid">
-        <div class="col-sm-4" style="background-color:lavender;">
-        <img src="<%=pokemonItem.img %>">
-        <h4>ID: <%=pokemonItem.id %></h4>
-         </div>
-         <div class="col-sm-4" style="background-color:lavender;">
-            <h4>Type: <%=pokemonItem.type %></h4>
-        </div>
-        <div class="col-sm-4" style="background-color:lavender;">
-            <h4>Stats: <br>
-            hp:<%=pokemonItem.stats.hp %> <br>
-            attack:<%=pokemonItem.stats.attack %> <br>
-            defense:<%=pokemonItem.stats.defense %> <br>
-            spattack:<%=pokemonItem.stats.spattack %> <br>
-            spdefense:<%=pokemonItem.stats.spdefense %> <br>
-            speed:<%=pokemonItem.stats.speed %>
-        </h4>
-        </div>
-        <div class="col-sm-4" style="background-color:lavender;">
-            <h4>Damages: <%=pokemonItem.damages %></h4>
-        </div>
-        
-    </div>
+    <style>
+        body{
+            background-color: #3c5aa6;
+        }
+        .card{
+            margin-top: 100px;
+            border: 10px solid #ffcb05;
+            border-radius: 2em;
+            background-color: white;
+        }
+    </style>
+    
+    <div class="container">
+                <div class="card col-md-4" style="width: 30rem; align-items: center;">
+                    <img src="<%=pokemonItem.img %>" class="card-img-top" >
+                    <div class="card-body">
+                      <h3 class="card-title"><%=pokemonItem.name %></h3>
+                      <p class="card-text">ID: <%=pokemonItem.id %>
+                        <br>Weight: <%=pokemonItem.misc.weight %>
+                        <br>Height: <%=pokemonItem.misc.height %></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Type: <%=pokemonItem.type %></li>
+                      <li class="list-group-item">Normal Ability: <%=pokemonItem.misc.abilities.normal %></li>
+                      <li class="list-group-item">Hidden Ability: <%=pokemonItem.misc.abilities.hidden %></li>
+                    </ul>
+                    <div class="card-body">
+                        <div class="button"><button type="submit" class="btn btn-outline-warning"><a href='/pokemon/<%=pokemonId%>/edit'>Edit</a></button>
+                            <form action="/pokemon/<%=pokemonId %>?_method=DELETE" method="POST"> <button type="submit" value="DELETE" class="btn btn-outline-danger">DELETE</button></form>
+                        </div>
+                    </div>
+    
+    </div>  
     
 </body>
 </html>
