@@ -19,6 +19,22 @@
                 </li>
             <% } %>
         </ul>
+        <div class="page-buttons" id="page-buttons">
+            <% if (page<=0) { %>
+                <button class="page-button redirect disabled-button">←Back</button>
+            <% }else{ %>
+                <a href="/pokemon?page=<%= page-1 %>">
+                    <button class="page-button redirect">←Back</button>
+                </a>
+            <% } %>
+            <% if ((page+1)*16>pokemon.length) { %>
+                <button class="page-button redirect disabled-button">Next→</button>
+            <% } else { %>
+                <a href="/pokemon?page=<%= page+1 %>">
+                    <button class="page-button redirect">Next→</button>
+                </a>
+            <% } %>
+        </div>
     </div>
 </body>
 </html>
