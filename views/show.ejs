@@ -62,13 +62,16 @@
             <div class="buttons2">
                 <!--Bottom Buttons-->
                 <div class="selectDiv">
-                    <button class="select">Select</button>
+                    <a href="/pokemon"><button class="select">Pokémon</button></a>
                 </div>
                 <div class="startDiv">
                     <button class="start">Start</button>
                 </div>
                 <div class="addDiv">
-                    <button class="add">Add</button>
+                    <form method="POST" action="/myteam">
+                        <input type="hidden" name="id" value="<%= selectedPokemon.id %>">
+                        <button class="add" type="submit">Add</button>
+                    </form>
                 </div>
                 <div class="removeDiv">
                     <button class="remove">Remove</button>

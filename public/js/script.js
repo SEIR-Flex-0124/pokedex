@@ -93,3 +93,7 @@ let currentSprite = 0;
 
 pokemonSprite.src = pokemonSprites[currentSprite];
 
+setInterval(function() {
+    currentSprite = (currentSprite + 1) % pokemonSprites.length;
+    pokemonSprite.src = pokemonSprites[currentSprite];
+}, 1000);
