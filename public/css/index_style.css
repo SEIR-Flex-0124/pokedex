@@ -1,21 +1,21 @@
 #pokedex{
-    display: flexbox;
-    flex-wrap: wrap;
-}
-
-#pokedex{
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-}
-
-#dex-page-list{
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 0;
-    transition: all 500ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dex-page{
+    display: flex;
+    flex-direction: row;
     list-style: none;
+    width: 100vh;
+    flex-wrap: wrap;
+}
+
+.mon {
+    width: 25vh;
+    margin: 5vh, 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
