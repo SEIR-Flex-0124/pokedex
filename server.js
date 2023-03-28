@@ -44,34 +44,28 @@ app.post('/pokemon', (req, res) => {
 })
 
 // EDIT
-app.get("/pokemon/:id/edit", (req, res)=>{
-    res.render("edit")
+app.get("/pokemon/:indexOfPokemon/edit", (req, res)=>{
+    res.render("edit", {pokemon: Pokemon[req.params.indexOfPokemon], index: req.params.indexOfPokemon})
 })
 //update
-app.put("/pokemon", (req, res)=>{
-    // Pokemon[req.params.id] = req.body;
-    res.redirect("/pokemon")
+app.put("/pokemon/:indexOfPokemon", (req, res)=>{
+    Pokemon[req.params.indexOfPokemon] = req.body;
+    res.redirect("/pokemon/:id")
 })
 
 //Delete
-app.delete("/pokemon/:id", (req, res)=>{
     app.delete("/pokemon/:id", (req, res)=>{
         Pokemon.splice(req.params.id, 1);
         res.redirect("/pokemon")
         });
-})
 
 // show route
 app.get("/pokemon/:id", (req, res)=>{
-    // let id = req.params.id;
+    let index = req.params.id;
     // let singlePokemon = Pokemon.find(p => p.id == id);
-    let singlePokemon = Pokemon[req.params.id]
-    res.render("./show", {singlePokemon})  //, id: req.params.id
-    console.log(singlePokemon.id)
-    console.log(singlePokemon)
+    let singlePokemon = Pokemon[index]
+    res.render("./show", {singlePokemon, index: req.params.id})  //, id: req.params.id
 })
-
-
 
 app.get("/*", (req, res)=>{
     res.send("This page is blank...")

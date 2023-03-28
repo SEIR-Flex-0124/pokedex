@@ -1,6 +1,6 @@
 <%- include('./header.ejs') %>
 
-<form method = "POST" action= "/pokemon">
+<form method = "POST" action= "/pokemon/<%=index;%>?_method=PUT">
     <input type="text" placeholder = "name" name = "name" id = "name">
     <br>
     <input type="text" placeholder = "type" name = "type" id = "type">
