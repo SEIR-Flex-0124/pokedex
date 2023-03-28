@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit a Pokemon</title>
 </head>
-<body>
+<body style="margin-left: 150px;">
     <h1>Edit a Pokemon</h1>
 <form action="/pokemon/<%=singlePokemon.id%>?_method=PUT" method="POST">
     Name: <input type="text" name="name" value="<%= singlePokemon.name %>">
@@ -18,6 +18,10 @@
     Defense: <input type="text" name="defense" value="<%= singlePokemon.stats.defense %>">
     <br/>
     <input type="submit" value="submit"/>
+    <br/>
+</form>
+<form action="/pokemon/<%= singlePokemon %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Pokemon">
 </form>
 </body>
 </html>

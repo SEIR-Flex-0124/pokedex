@@ -14,6 +14,7 @@ const sendNewPokemonForm = (req, res) => {
 
 // Post New Pokemon:
 const postNewPokemon = (req, res) => {
+    console.log(req.body)
     pokemon.unshift(req.body);
     res.redirect('/pokemon')
 }
@@ -29,6 +30,7 @@ const showOnePokemon = (req, res) => {
 const editPokemon = (req, res) => {
     const id = req.params.id
     const singlePokemon = pokemon.find(p=>p.id == id)
+    console.log(singlePokemon)
     res.render('edit.ejs', {singlePokemon})
 }
 
@@ -37,8 +39,6 @@ const updatePokemon = (req, res) => {
   const newBody = {name, type:[type], stats:{hp: HP, attack, defense}}
   const id = req.params.id
   const oldPokemon = pokemon.find(p=>p.id == id)
-  console.log(oldPokemon)
-  console.log(req.body)
   const newPokemon = Object.assign(oldPokemon, newBody)
   let pokeIndex;
   pokemon.map((p, i) => {
@@ -51,11 +51,11 @@ const updatePokemon = (req, res) => {
 }
 
 
-// // Delete Route:
-// router.delete('/:id', (req, res) => {
-// 	pokemon.splice(req.params.id, 1);
-// 	res.redirect('/pokemon')
-// });
+// Delete Route:
+const deletePokemon = (req, res) => {
+	pokemon.splice(req.params.id, 1);
+	res.redirect('/pokemon')
+}
 
 module.exports = {
     getAllPokemon,
@@ -63,5 +63,6 @@ module.exports = {
     postNewPokemon,
     showOnePokemon,
     editPokemon,
-    updatePokemon
+    updatePokemon,
+    deletePokemon
 }
