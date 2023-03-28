@@ -15,6 +15,7 @@
                 <% const mon = pokemon[i] %>
                 <li class="mon mon-<%= ("000"+i.toString()).slice(-3) %>" id="mon-<%= ("000"+i.toString()).slice(-4) %>">
                     <img src="<%= mon.img %>" height="100vh" alt="">
+                    <h3 class="poke-name"><%= mon.name %></h3>
                 </li>
             <% } %>
         </ul>
