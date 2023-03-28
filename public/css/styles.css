@@ -20,6 +20,9 @@ header {
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     background: #c92438;
+    background: -webkit-linear-gradient(to right, #c92438, #a50026);
+    background: linear-gradient(to right, #c92438, #a50026);
+    border: 2px solid black;
 }
 
 .top {
@@ -36,6 +39,7 @@ header {
     border: 1px solid black;
     border-radius: 50%;
     background-color: #28aafa;
+    border: 2px solid black;
 }
 
 .ryg {
@@ -49,7 +53,7 @@ header {
 .red, .yellow, .green {
     height: 10px;
     width: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 50%;
     margin: 2px
 }
@@ -72,7 +76,7 @@ header {
     margin-left: 50px;
     border-radius: 20px;
     background-color: #2fdc0d;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .screenBorder {
@@ -111,11 +115,17 @@ header {
     justify-content: center;
 }
 
+
 /* Slide Show Div */
 
 .slideshow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     height: 200px;
-    width: 200px;
+    width: 360px;
 }
 
 /* Add home.css change here */
