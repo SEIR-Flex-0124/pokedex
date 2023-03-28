@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .dex-page{
@@ -19,4 +20,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#page-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-buttons button{
+    margin: 0 10vw;
 }
