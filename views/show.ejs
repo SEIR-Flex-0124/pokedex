@@ -18,7 +18,10 @@
         Height:<%= singlePokemon.misc.height %>
         Weight: <%= singlePokemon.misc.weight %>
        </h4>
+       Abilities: <%= singlePokemon.misc.abilities.normal %>,  <%= singlePokemon.misc.abilities.hidden %> 
     </div>
+    <button onclick = "window.location.href='http://localhost:4000/pokemon/:id/edit';">edit this pokemon</button><button>delete this pokemon</button>
+    <button onclick = "window.location.href='http://localhost:4000/pokemon';">Return to Home</button> 
 </h1>
 </div>
 </body>
