@@ -14,8 +14,10 @@
             <% for( let i = 0+page*16; ((i < pokemon.length)&&(i<(page+1)*16)); i++ ) { %>
                 <% const mon = pokemon[i] %>
                 <li class="mon mon-<%= ("000"+i.toString()).slice(-3) %>" id="mon-<%= ("000"+i.toString()).slice(-4) %>">
-                    <img src="<%= mon.img %>" height="100vh" alt="">
-                    <h3 class="poke-name"><%= mon.name %></h3>
+                    <a href="/pokemon/<%= i %>">
+                        <img src="<%= mon.img %>" height="100vh" alt="">
+                        <h3 class="poke-name"><%= mon.name %></h3>
+                    </a>
                 </li>
             <% } %>
         </ul>
