@@ -15,6 +15,9 @@ const sendNewPokemonForm = (req, res) => {
 // Post New Pokemon:
 const postNewPokemon = (req, res) => {
     console.log(req.body)
+    req.body.type = [req.body.type]
+    const {hp, attack, defense} = req.body
+    req.body.stats = {hp, attack, defense} // Adding the nested stats object to req.body and passing in the extracted values.
     pokemon.unshift(req.body);
     res.redirect('/pokemon')
 }
@@ -23,6 +26,7 @@ const postNewPokemon = (req, res) => {
 const showOnePokemon = (req, res) => {
     const id = req.params.id
     const singlePokemon = pokemon.find(p=>p.id == id)
+    singlePokemon.id = parseInt(singlePokemon.id)
     res.render('show.ejs', {singlePokemon})
 }
 
