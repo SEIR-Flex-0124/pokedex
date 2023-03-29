@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="main-id" id="main">
+    <section class="mon-main" id="mon-main">
         <h1 class="mon-name" id="mon-name">
             <%= mon.name %>
         </h1>
@@ -23,6 +23,16 @@
                 </span>
             <% } %>
         </div>
+    </section>
+    <section class="mon-stats mon-stats-sect" id="mon-stats-sect">
+        <ul class="mon-stats mon-stats-ul" id="mon-stats-ul">
+            <li class="hp">HP: <%= mon.stats.hp %></li>
+            <li class="attack">Attack: <%= mon.stats.attack %></li>
+            <li class="defense">Defense: <%= mon.stats.defense %></li>
+            <li class="spattack">Special Attack: <%= mon.stats.spattack %></li>
+            <li class="spdefense">Special Defense: <%= mon.stats.spdefense %></li>
+            <li class="speed">Speed: <%= mon.stats.speed %></li>
+        </ul>
     </section>
 </body>
 </html>
