@@ -139,7 +139,8 @@ header {
 
 /* Pokemon List Styling */
 .pokeList {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -147,12 +148,12 @@ header {
 
 .pokemonLine {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 .pokeList img {
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
 }
 
 .footerDiv {
@@ -187,6 +188,12 @@ a {
 .myTeam img {
     height: 100px;
     width: 100px;
+}
+
+.noPokemon {
+    text-align: center;
+    line-height: 2;
+    padding-left: 135px;
 }
 .buttons {
     height: 200px;
@@ -358,7 +365,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: space-evenly;
   }
 
 .types {
@@ -366,7 +373,8 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 80%
+    width: 80%;
+    margin-bottom: 10px;
 }
 
 .type1, .type2 {
@@ -490,3 +498,50 @@ a {
     background-color: darkgoldenrod;
     opacity: 80%;
 }
+
+.rightScreenBorder {
+    border: 2px solid black;
+    height: 350px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada ;
+    margin-bottom: 20px;
+}
+
+.rightScreen {
+    border: 2px solid black;
+    height: 330px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.rightScreenBorder2 {
+    border: 2px solid black;
+    height: 150px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada ;
+  }
+
+.rightScreen2 {
+    border: 2px solid black;
+    height: 130px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }

@@ -62,8 +62,9 @@ let slide = true;
 setTimeout(() => {
     leftDiv.style.transform = 'translateX(-100%)';
     rightDiv.style.transform = 'translateX(100%)';
-    slide = true;
+    slide = false;
 }, 1000);
+
 
 
 
@@ -74,3 +75,7 @@ const hpFill = document.querySelector('.hpFill');
 
 
 hpFill.style.width = `${selectedPokemon.stats.hp/2}%`;
+
+
+
+

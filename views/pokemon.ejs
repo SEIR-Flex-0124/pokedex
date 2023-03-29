@@ -35,8 +35,8 @@
                         <!--Pokémon List-->
                         <% for(let i = 0; i < pokemon.length; i++) { %>
                             <div class="pokemonLine">
-                            <img src="<%= pokemon[i].img %>">
-                            <h3><a href="/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a></h3>
+                                <a href="/pokemon/<%= pokemon[i].id %>"><img src="<%= pokemon[i].img %>"></a>
+                            <p><a href="/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a></p>
                             <br>
                             </div>
                         <% } %>

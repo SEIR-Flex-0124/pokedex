@@ -33,6 +33,7 @@
                     </div>
                     <div class="myTeamDiv">
                         <!--Team List-->
+                        <% if (myTeam.length > 0) { %>
                         <% for(let i = 0; i < myTeam.length; i++) { %>
                             <div class="myTeam">
                             <img src="<%= myTeam[i].img %>">
@@ -40,6 +41,9 @@
                             <br>
                             </div>
                         <% } %>
+                        <% } else { %>
+                            <p class="noPokemon">No Pokémon In Your Team Yet!</p>
+                            <% } %>
                     </div>
                     <div class="footerDiv">
                         <p></p>
@@ -68,7 +72,7 @@
             <div class="buttons2">
                 <!--Bottom Buttons-->
                 <div class="selectDiv">
-                    <button class="select">Select</button>
+                    <a href="/pokemon"><button class="select">Pokémon</button></a>
                 </div>
                 <div class="startDiv">
                     <button class="start">Start</button>

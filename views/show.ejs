@@ -42,11 +42,12 @@
             </div>
             <div class="buttons">
                 <!--D-Pad & A/B Buttons-->
+                
                 <div class="dpad">
                     <div class="dpad-up"><button class="up"></button></div>
                     <div class="dpad-down"><button class="down"></button></div>
-                    <div class="dpad-left"><button class="left"></button></div>
-                    <div class="dpad-right"><button class="right"></button></div>
+                    <div class="dpad-left"><a href="/pokemon/<%= String(Number(selectedPokemon.id) - 1).padStart(3, '0') %>"><button class="left"></button></a></div>
+                    <div class="dpad-right"><a href="/pokemon/<%= String(Number(selectedPokemon.id) + 1).padStart(3, '0') %>"><button class="right"></button></a></div>
                     <div class="dpad-middle"></div>
                 </div>
                 <div class="ab">
@@ -89,7 +90,6 @@
                                 <% } %>
                             </div>
                             <div class="stats">
-                                <h3>Stats</h3>
                                 <div class="hp">
                                     <p>HP : <%= selectedPokemon.stats.hp %></p>
                                     <div class="bar">
@@ -136,9 +136,22 @@
                     <div class="rightScreenBorder">
                         <div class="rightScreen">
                             <!--Other Display-->
+                            <p>Classification : <%= selectedPokemon.misc.classification %></p>
+                            <p>Height : <%= selectedPokemon.misc.height %></p>
+                            <p>Weight : <%= selectedPokemon.misc.weight %></p>
+                            <p>Sprite</p>
+                            <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/<%= selectedPokemon.name.toLowerCase() %>.png">
+                        </div>
+                    </div>
+                    <div class="rightScreenBorder2">
+                        <div class="rightScreen2">
+                            <!--My Team Display-->
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bottomDiv">
+                <!--Info Box-->
             </div>
         </div>
     </main>
