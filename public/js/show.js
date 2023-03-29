@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const leftDiv = document.querySelector('.leftDiv');
 const rightDiv = document.querySelector('.rightDiv');
+const bottomDiv = document.querySelector('.bottomDiv')
 let slide = true;
 
 // One Second Delay
@@ -62,6 +63,7 @@ let slide = true;
 setTimeout(() => {
     leftDiv.style.transform = 'translateX(-100%)';
     rightDiv.style.transform = 'translateX(100%)';
+    bottomDiv.style.transform = 'translateY(90%)';
     slide = false;
 }, 1000);
 

@@ -303,7 +303,6 @@ a {
     top: 0;
     width: 400px;
     height: 600px;
-    background-color: #28aafa;
     z-index: -1;
     border-radius: 20px;
     background-color:#606060 ;
@@ -543,5 +542,56 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
+
+.bottomDiv {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 250px;
+    width: 400px;
+    height: 250px;
+    z-index: -1;
+    border-radius: 20px;
+    background-color:#606060 ;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;   
+}
+
+.bottomDivInside {
+    height: 235px;
+    width: 380px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #c92438;
+    background: -webkit-linear-gradient(to right, #c92438, #a50026);
+    background: linear-gradient(to right, #c92438, #a50026);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.bottomScreenBorder {
+    border: 2px solid black;
+    height: 160px;
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada;
+    margin-top: 20px;
+}
+
+.bottomScreen {
+    border: 2px solid black;
+    height: 140px;
+    width: 320px;
+    border-radius: 10px;
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
