@@ -31,15 +31,14 @@
                     <div class="headerDiv <%= selectedPokemon.type[0] %>">
                         <h3 class="title"><%= selectedPokemon.name %></h3>
                     </div>
-                    <div class="myTeamSelect">
+                    <div class="pokemonSelect">
                         <!--Pokémon Select-->
-                        <img src="<%= selectedPokemon.img %>">
-                        
+                            <img src="<%= selectedPokemon.img %>">
                     </div>
                     <div class="footerDiv <%= selectedPokemon.type[0] %>">
-                        <form method="POST" action="/myteam/<%= selectedPokemon.id %>/edit">
+                        <form method="POST" action="/pokemon/<%= selectedPokemon.id %>/edit">
                             <label for="name">New Name:</label>
-                            <input type="text" id="name" name="name" value="<%selectedPokemon.name %>">
+                            <input type="text" id="name" name="name" value="<% selectedPokemon.name %>">
                             <button type="submit">Save</button>
                         </form>
                     </div>
@@ -71,12 +70,12 @@
                     <a href="/pokemon"><button class="select">Pokémon</button></a>
                 </div>
                 <div class="startDiv">
-                    <button class="start">Start</button>
+                    <button class="start">Edit</button>
                 </div>
                 <div class="addDiv">
                     <form method="POST" action="/myteam">
                         <input type="hidden" name="id" value="<%= selectedPokemon.id %>">
-                        <button class="add" type="submit">Edit</button>
+                        <button class="add" type="submit">Add</button>
                     </form>
                 </div>
                 <div class="removeDiv">
@@ -143,9 +142,7 @@
                             <!--Other Display-->
                             <p>Classification :<br> <%= selectedPokemon.misc.classification %></p>
                             <p>Height : <%= selectedPokemon.misc.height %></p>
-                            <p>Weight : <%= selectedPokemon.misc.weight %></p>
-                            <p>Sprite</p>
-                            <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/<%= selectedPokemon.name.toLowerCase() %>.png">
+                            <p>Weight : <%= selectedPokemon.misc.weight %></p>                         
                         </div>
                     </div>
                     <div class="rightScreenBorder2">
@@ -157,7 +154,7 @@
                             <% if (myTeam.length > 0) { %>
                             <% for(let i = 0; i < myTeam.length; i++) { %>
                                 <div class="myTeamSprites">
-                                    <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/<%= myTeam[i].name.toLowerCase() %>.png">
+                                    <img src="<%= myTeam[i].img %>">
                                 </div>
                             <% } %>
                             <% } else { %>

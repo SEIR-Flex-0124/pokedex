@@ -36,7 +36,7 @@
                             <img src="<%= selectedPokemon.img %>">
                     </div>
                     <div class="footerDiv <%= selectedPokemon.type[0] %>">
-                        
+        
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <a href="/pokemon"><button class="select">Pokémon</button></a>
                 </div>
                 <div class="startDiv">
-                    <button class="start">Start</button>
+                    <a href="/pokemon/<%= selectedPokemon.id %>/edit"><button class="start">Edit</button></a>
                 </div>
                 <div class="addDiv">
                     <form method="POST" action="/myteam">
@@ -138,9 +138,7 @@
                             <!--Other Display-->
                             <p>Classification :<br> <%= selectedPokemon.misc.classification %></p>
                             <p>Height : <%= selectedPokemon.misc.height %></p>
-                            <p>Weight : <%= selectedPokemon.misc.weight %></p>
-                            <p>Sprite</p>
-                            <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/<%= selectedPokemon.name.toLowerCase() %>.png">
+                            <p>Weight : <%= selectedPokemon.misc.weight %></p>                         
                         </div>
                     </div>
                     <div class="rightScreenBorder2">
@@ -152,7 +150,7 @@
                             <% if (myTeam.length > 0) { %>
                             <% for(let i = 0; i < myTeam.length; i++) { %>
                                 <div class="myTeamSprites">
-                                    <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/<%= myTeam[i].name.toLowerCase() %>.png">
+                                    <img src="<%= myTeam[i].img %>">
                                 </div>
                             <% } %>
                             <% } else { %>
