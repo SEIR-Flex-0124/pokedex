@@ -7,6 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <%= mon.name %>
+    <section class="main-id" id="main">
+        <h1 class="mon-name" id="mon-name">
+            <%= mon.name %>
+        </h1>
+        <h2 class="mon-id" id="mon-id">
+            #<%= mon.id %>
+        </h2>
+        <img src="<%= mon.img %>" alt="Picture of <%= mon.name %>" class="mon-img" id="mon-img">
+        <div class="mon-types" id="mon-types">
+            <% for( let i = 0; i < mon.type.length; i++ ) { %>
+                <% const type = mon.type[i] %>
+                <span class="mon-type mon-types" id="mon-type<%= i %>">
+                    <%= type %>
+                </span>
+            <% } %>
+        </div>
+    </section>
 </body>
 </html>
