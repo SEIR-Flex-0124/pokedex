@@ -31,12 +31,17 @@
                     <div class="headerDiv <%= selectedPokemon.type[0] %>">
                         <h3 class="title"><%= selectedPokemon.name %></h3>
                     </div>
-                    <div class="pokemonSelect">
+                    <div class="myTeamSelect">
                         <!--Pokémon Select-->
-                            <img src="<%= selectedPokemon.img %>">
+                        <img src="<%= selectedPokemon.img %>">
+                        
                     </div>
                     <div class="footerDiv <%= selectedPokemon.type[0] %>">
-                        
+                        <form method="POST" action="/myteam/<%= selectedPokemon.id %>/edit">
+                            <label for="name">New Name:</label>
+                            <input type="text" id="name" name="name" value="<%selectedPokemon.name %>">
+                            <button type="submit">Save</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -71,7 +76,7 @@
                 <div class="addDiv">
                     <form method="POST" action="/myteam">
                         <input type="hidden" name="id" value="<%= selectedPokemon.id %>">
-                        <button class="add" type="submit">Add</button>
+                        <button class="add" type="submit">Edit</button>
                     </form>
                 </div>
                 <div class="removeDiv">
