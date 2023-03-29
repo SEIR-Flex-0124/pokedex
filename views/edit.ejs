@@ -1,21 +1,21 @@
 <%- include('./header.ejs') %>
 
 <form method = "POST" action= "/pokemon/<%=index;%>?_method=PUT">
-    <input type="text" placeholder = "name" name = "name" id = "name">
+    <input type="text" placeholder = "name" name = "name" id = "name" value = "<%= pokemon.name %>">
     <br>
-    <input type="text" placeholder = "type" name = "type" id = "type">
+    <input type="text" placeholder = "type" name = "type" id = "type" value = "<%= pokemon.type %>">
     <br>
-    <input type="text" placeholder = "imageURL" name = "img" id = "img">
+    <input type="text" placeholder = "imageURL" name = "img" id = "img" value = "<%= pokemon.img %>">
     <br>
-    <input type="text" placeholder = "classification" name = "Pokemon.misc.classification" id = "Pokemon.misc.classification">
+    <input type="text" placeholder = "classification" name = "Pokemon.misc.classification" id = "Pokemon.misc.classification" value = "<%= pokemon.classification %>">
     <br>
-    <input type="text" placeholder = "Normal Ability" name = "nAbility" id = "nAbility">
+    <input type="text" placeholder = "Normal Ability" name = "nAbility" id = "nAbility" value = "<%= pokemon.nAbility %>">
     <br>
-    <input type="text" placeholder = "Hidden Ability" name = "hAbility" id = "hAbility">
+    <input type="text" placeholder = "Hidden Ability" name = "hAbility" id = "hAbility" value = "<%= pokemon.hAbility %>">
     <br>
-    <input type="text" placeholder = "height" name = "Pokemon.height" id = "height">
+    <input type="text" placeholder = "height" name = "Pokemon.height" id = "height" value = "<%= pokemon.height %>">
     <br>
-    <input type="text" placeholder = "weight" name = "weight" id = "weight">
+    <input type="text" placeholder = "weight" name = "weight" id = "weight" value = "<%= pokemon.weight %>">
     <br>
     <input type = "submit" value = "Update">
 </form>

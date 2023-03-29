@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride("_method")); 
 //is part of methodoverride syntax
+app.use(express.json());
 
 // index route
 app.get("/pokemon", (req, res)=>{
@@ -45,12 +46,31 @@ app.post('/pokemon', (req, res) => {
 
 // EDIT
 app.get("/pokemon/:indexOfPokemon/edit", (req, res)=>{
-    res.render("edit", {pokemon: Pokemon[req.params.indexOfPokemon], index: req.params.indexOfPokemon})
+    let pokemon = Pokemon[req.params.indexOfPokemon]
+    res.render("edit", {pokemon, index: req.params.indexOfPokemon})
 })
 //update
 app.put("/pokemon/:indexOfPokemon", (req, res)=>{
-    Pokemon[req.params.indexOfPokemon] = req.body;
-    res.redirect("/pokemon/:id")
+    // Pokemon[req.params.indexOfPokemon] = req.body;
+
+    let editedPokemon = {
+        name: req.body.name,
+        id: (Pokemon.length + 1),
+        type: req.body.type.split(","),
+        img: req.body.img,
+        misc: {
+            classification: req.body.classification,
+            weight: req.body.weight,
+            height: req.body.height,
+            abilities: {
+                normal: req.body.nAbility,
+                hidden: req.body.hAbility
+            }
+        }
+    }
+    Pokemon[req.params.indexOfPokemon] = editedPokemon
+
+    res.redirect("/pokemon")
 })
 
 //Delete
