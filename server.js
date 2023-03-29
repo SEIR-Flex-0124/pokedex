@@ -3,6 +3,7 @@ const app = express();
 const PORT = 4000
 const pokemonList = require('./models/pokemon.js')
 const methodOverride = require('method-override')
+const path = require('path')
 
 
 
@@ -10,6 +11,7 @@ const methodOverride = require('method-override')
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride('_method'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 //Routes
@@ -59,22 +61,15 @@ app.post('/pokemon', (req, res) => {
 })
 
 app.put('/pokemon/:id', (req, res) => {
-    let pokemonInput = req.body
-    const newPokemon = {
-    name: pokemonInput.name,
-    img: pokemonInput.img,
-    type:
-      pokemonInput.type.split(',').map(t => t.trim()),
-    stats: {
-      hp: pokemonInput.hp,
-      attack: pokemonInput.atk,
-      defense: pokemonInput.def,
-      spattack: "",
-      spdefense: "",
-      speed: ""
-    }
-    }
-    pokemonList.splice(0, 0, newPokemon)
+    let id = req.params.id
+    let edit = req.body
+    let thisPokemon = pokemonList[id]
+    thisPokemon.name = edit.name,
+    thisPokemon.img = edit.img,
+    thisPokemon.type = edit.type.split(',').map(t => t.trim()),
+    thisPokemon.stats.hp = edit.hp,
+    thisPokemon.stats.attack = edit.atk,
+    thisPokemon.stats.defense = edit.def
     res.redirect('/pokemon')
 })
 
