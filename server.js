@@ -5,7 +5,7 @@ const pokemon = require('./models/pokemon.js');
 const methodOverride = require('method-override');
 app.set('view engine', 'ejs');
 
-app.use(express.urlencoded({ extended:false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
@@ -22,53 +22,53 @@ app.get('/pokemon/new', (req, res) => {
 
 app.get('/pokemon/:id', (req, res) => {
     let singlePoke = pokemon[req.params.id]
+    console.log(singlePoke);
     res.render('show.ejs', {singlePoke})
 })
 
-// app.post('/pokemon', (req, res) => {
-//     req.body.type.split
-//     let newPokemon = req.body;
-//     pokemon.push(newPokemon);
-//     res.redirect('/pokemon');
-//   })
 app.post('/pokemon', (req, res) => {
-    const name = req.body.name;
-    const type = req.body.type.split(',').map(t => t.trim());
-    const image = req.body.img;
-    const attack = req.body.stats.attack;
-    const defense = req.body.stats.defense;
-    const speed = req.body.stats.speed;
-    // const abilities = req.body.abilities.split(',').map(a => a.trim());
-    // const moves = req.body.moves.split(',').map(m => m.trim());
-  
+    // req.body.type.split
+    // console.log(req.body)
+    // let newPokemon = req.body;
     const newPokemon = {
-      name: name,
-      type: type,
-      img: image,
-      stats: {
-        attack: attack,
-        defense: defense,
-        speed: speed,
-      }
-    //   misc: {
-    //     abilities: {
-    //       normal: abilities,
-    //       hidden: [] // Assuming no hidden abilities for simplicity
-    //     }
-    //   },
-    //   moves: {
-    //     // Assuming all moves are level-up moves for simplicity
-    //     level_up: moves.map(move => {
-    //       return {
-    //         name: move,
-    //         level: 1 // Default to level 1, adjust as needed
-    //       };
-    //     })
-      }
-    
+        name: req.body.name,
+        img: req.body.img,
+        type: [req.body.type],
+        stats: {
+            attack: req.body.attack,
+            defense: req.body.defense,
+            speed: req.body.speed,
+        }
+    }
+    console.log(newPokemon);
+    newPokemon.id = pokemon.length;
     pokemon.push(newPokemon);
     res.redirect('/pokemon');
-    });
+  })
+// app.post('/pokemon', (req, res) => {
+//     console.log(req.body);
+//     const name = req.body.name;
+//     const type = req.body.type;
+//     const image = req.body.img;
+//     const attack = req.body.stats.attack;
+//     const defense = req.body.stats.defense;
+//     const speed = req.body.stats.speed;
+    
+//     const newPokemon = {
+//       name: name,
+//       type: type,
+//       img: image,
+//       stats: {
+//         attack: attack,
+//         defense: defense,
+//         speed: speed,
+//       }
+//      }
+//     // console.log(newPokemon);
+//     newPokemon.id = pokemon.length;
+//     pokemon.push(newPokemon);
+//     res.redirect('/pokemon');
+//     });
 
 app.get('/:id/edit', (req, res) => {
     const pokemonToBeEdited = pokemon[req.params.id];

@@ -1,5 +1,6 @@
 <%- include('./partials/header.ejs') %>
 <h2><%= singlePoke.name %></h2>
+
     <ul>TYPE:
         <% for(let i = 0; i < singlePoke.type.length; i++) { %>
             <li><%= singlePoke.type[i] %></li>
