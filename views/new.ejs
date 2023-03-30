@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <script src="/js/myTeam.js" defer></script>
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -29,29 +29,25 @@
             <div class="screenBorder">
                 <div class="screen">
                     <div class="headerDiv">
-                        <h3 class="title">My Team</h3>
+                        <h3 class="title">Pokédex</h3>
                     </div>
-                    <div class="myTeamDiv">
-                        <!--Team List-->
-                        <% if (myTeam.length > 0) { %>
-                        <% for(let i = 0; i < myTeam.length; i++) { %>
-                            <div class="myTeam">
-                            <img src="<%= myTeam[i].img %>">
-                            <div class="nameRemove">
-                            <h3><a href="/pokemon/<%= myTeam[i].id %>"><%= myTeam[i].name %></a></h3>
-                            <form method="POST" action="/myteam/<%= myTeam[i].id %>?_method=DELETE">
-                                <button type="submit">X</button>
-                            </form>
-                            </div>
+                    <div class="newPokemon">
+                        <!--New Pokémon Form-->
+                        <form method="POST" action="/new">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
                             <br>
-                            </div>
-                        <% } %>
-                        <% } else { %>
-                            <p class="noPokemon">No Pokémon In Your Team Yet!</p>
-                            <% } %>
+                            <label for="img">Image URL:</label>
+                            <input type="text" id="img" name="img">
+                            <br>
+                            <label for="type">Type:</label>
+                            <input type="text" id="type" name="type">
+                            <br>
+                            <button type="submit">Add Pokemon</button>
+                        </form>
                     </div>
                     <div class="footerDiv">
-                        <p></p>
+                        
                     </div>
                 </div>
             </div>
@@ -77,10 +73,10 @@
             <div class="buttons2">
                 <!--Bottom Buttons-->
                 <div class="selectDiv">
-                    <a href="/pokemon"><button class="select">Pokémon</button></a>
+                    <button class="select">Select</button>
                 </div>
                 <div class="startDiv">
-                    <button class="start">Start</button>
+                    <a href="/home"><button class="start">Start</button></a>
                 </div>
                 <div class="addDiv">
                     <button class="add">Add</button>
@@ -106,6 +102,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bottomDiv">
+                <!--Info Box-->
             </div>
         </div>
     </main>
