@@ -400,6 +400,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    background-color:ghostwhite;
   }
 
 .types {
@@ -554,6 +555,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color:ghostwhite;
 
 }
 
@@ -573,9 +576,10 @@ a {
     height: 130px;
     width: 300px;
     border-radius: 10px;
-    background-color:white ;
+    background-color:white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
     text-align: center;

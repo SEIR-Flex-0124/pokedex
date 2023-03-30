@@ -39,17 +39,13 @@ router.post('/new', (req, res) => {
             weight: "89",
         }
     };
-    console.log(newPokemon);
     pokemon.push(newPokemon);
-    
     res.redirect('/pokemon');
 });
 
 router.get('/pokemon/:id', (req, res) => {
     const id = req.params.id;
-    console.log(id)
     const selectedPokemon = pokemon.find(p => p.id === id);
-    console.log(pokemon[151]);
     res.render('show.ejs', { selectedPokemon, myTeam, pokemon} );
 });
 
