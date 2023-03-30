@@ -11,8 +11,13 @@ router.get('/pokemon/new', (req,res) =>{
 })
 
 router.get('/pokemon/:id', (req,res) =>{
-    const pokeman = pokemon[req.params.id];
-    res.render("pokemon/show.ejs", {pokeman: pokeman});
+    const id = req.params.id;
+    const pokeman = pokemon[id];
+    if (!pokeman) {
+    res.redirect('/pokemon');
+    } else {
+    res.render("pokemon/show.ejs", {pokeman});
+      }
 })
 
 router.get('/pokemon/:id/edit', (req, res) => {
@@ -21,8 +26,17 @@ router.get('/pokemon/:id/edit', (req, res) => {
 })
 
 router.post('/pokemon', (req, res) =>{
-    let newPokemon = req.body;
-    newPokemon.id = pokemon.length;
+    let newPokemon = {
+    id: pokemon.length,
+    name: req.body.name,
+    img: req.body.img,
+    type: [req.body.type],
+    stats:{
+    hp: req.body['stats.hp'],
+    attack: req.body['stats.attack'],
+    defense: req.body['stats.defense'],
+    },
+    };
     pokemon.push(newPokemon);
     res.redirect('/pokemon');
 })
