@@ -107,7 +107,7 @@ header {
 }
 
 .headerDiv {
-    background-color: antiquewhite;
+    background-color:rgba(106, 200, 203, 0.727);
     height: 60px;
     width: 360px;
     display: flex;
@@ -157,7 +157,7 @@ header {
 }
 
 .footerDiv {
-    background-color: antiquewhite;
+    background-color:rgba(106, 200, 203, 0.727);
     height: 60px;
     width: 360px;
     display: flex;
@@ -191,9 +191,10 @@ a {
 }
 
 .noPokemon {
+    display: flex;
     text-align: center;
     line-height: 2;
-    padding-left: 135px;
+    margin-left: 135px;
 }
 
 .nameRemove {
@@ -205,14 +206,29 @@ a {
 
 
 /* myTeamShow */
+
 .myTeamSelect img {
     height: 200px;
     width: 200px;
 }
 
 
+/* New Pokemon */
+
+.newPokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
 
+.newPokemon label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .buttons {
     height: 200px;
@@ -562,13 +578,15 @@ a {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    text-align: center;
 }
 
 .myTeamShow {
     display: flex;
     flex-direction: row;
-
 }
+
+
 
 .myTeamSprites img {
     height: 50px;

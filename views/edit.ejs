@@ -57,7 +57,7 @@
                 <div class="ab">
                     <!--A & B Buttons-->
                     <div class="bButton">
-                        <button class="buttonB">B</button>
+                        <a href="/pokemon/<%= selectedPokemon.id %>"><button class="buttonB">B</button></a>
                     </div>
                     <div class="aButton">
                         <button class="buttonA">A</button>
@@ -70,16 +70,13 @@
                     <a href="/pokemon"><button class="select">Pokémon</button></a>
                 </div>
                 <div class="startDiv">
-                    <button class="start">Edit</button>
+                    <a href="/myteam"><button class="start">My Team</button></a>
                 </div>
                 <div class="addDiv">
-                    <form method="POST" action="/myteam">
-                        <input type="hidden" name="id" value="<%= selectedPokemon.id %>">
-                        <button class="add" type="submit">Add</button>
-                    </form>
+                        <button class="add" type="submit">Add To Team</button>
                 </div>
                 <div class="removeDiv">
-                    <button class="remove">Remove</button>
+                    <button class="remove">Edit</button>
                 </div>
             </div>
             <div class="leftDiv">
@@ -161,17 +158,6 @@
                                 <p class="noPokemon">No Pokémon In Your Team Yet!</p>
                             <% } %>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottomDiv">
-                <!--Info Box-->
-                <div class="bottomDivInside">
-                    <div class="bottomScreenBorder">
-                        <div class="bottomScreen">
-                            <!--Button Instructions-->
-                            <p>Buttons</p>
                         </div>
                     </div>
                 </div>

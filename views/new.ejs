@@ -35,14 +35,41 @@
                         <!--New Pokémon Form-->
                         <form method="POST" action="/new">
                             <label for="name">Name:</label>
-                            <input type="text" id="name" name="name">
-                            <br>
-                            <label for="img">Image URL:</label>
-                            <input type="text" id="img" name="img">
-                            <br>
+                            <input type="text" id="name" name="name"><br>
+                            
+                            <label for="img">Img Url:</label>
+                            <input type="text" id="img" name="img"><br>
+                            
                             <label for="type">Type:</label>
-                            <input type="text" id="type" name="type">
-                            <br>
+                            <input type="text" id="type" name="type"><br>
+                            
+                            <label for="hp">HP:</label>
+                            <input type="number" id="hp" name="stats.hp"><br>
+
+                            <label for="attack">Attack:</label>
+                            <input type="number" id="attack" name="stats.attack"><br>
+
+                            <label for="defense">Defense:</label>
+                            <input type="number" id="defense" name="stats.defense"><br>
+
+                            <label for="spattack">Special Attack:</label>
+                            <input type="number" id="spattack" name="stats.spattack"><br>
+
+                            <label for="spdefense">Special Defense:</label>
+                            <input type="number" id="spdefense" name="stats.spdefense"><br>
+
+                            <label for="speed">Speed:</label>
+                            <input type="number" id="speed" name="stats.speed"><br>
+
+                            <label for="classification">Classification:</label>
+                            <input type="text" id="classification" name="misc.classification"><br>
+
+                            <label for="height">Height:</label>
+                            <input type="text" id="height" name="misc.height"><br>
+
+                            <label for="weight">Weight:</label>
+                            <input type="text" id="weight" name="misc.weight"><br>
+                            
                             <button type="submit">Add Pokemon</button>
                         </form>
                     </div>
@@ -63,7 +90,7 @@
                 <div class="ab">
                     <!--A & B Buttons-->
                     <div class="bButton">
-                        <button class="buttonB">B</button>
+                        <a href="/pokemon"><button class="buttonB">B</button></a>
                     </div>
                     <div class="aButton">
                         <button class="buttonA">A</button>
@@ -73,16 +100,16 @@
             <div class="buttons2">
                 <!--Bottom Buttons-->
                 <div class="selectDiv">
-                    <button class="select">Select</button>
+                    <a href="/pokemon"><button class="select">Pokemon</button></a>
                 </div>
                 <div class="startDiv">
-                    <a href="/home"><button class="start">Start</button></a>
+                    <a href="/myteam"><button class="start">My Team</button></a>
                 </div>
                 <div class="addDiv">
-                    <button class="add">Add</button>
+                    <button class="add">New</button>
                 </div>
                 <div class="removeDiv">
-                    <button class="remove">Remove</button>
+                    <button class="remove">Edit</button>
                 </div>
             </div>
             <div class="leftDiv">
