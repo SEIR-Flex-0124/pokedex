@@ -43,7 +43,7 @@ router.post('/pokemon', (req, res) =>{
 
 router.put('/pokemon/:id', (req, res) =>{
     let updatedPokemon = req.body;
-    pokeom[req.params.id] = updatedPokemon;
+    pokemon[req.params.id] = updatedPokemon;
     res.redirect(`/pokemon/${req.params.id}`);
 })
 

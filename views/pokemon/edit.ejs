@@ -3,6 +3,23 @@
     <form method="POST" action="/pokemon/<%= idx %>?_method=PUT">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" value=<%= pokemonEdit.name %>>
+        <br>
+        <label for="img">Image URL:</label>
+        <input type="text" name="img" id="img" value=<%= pokemonEdit.img %>>
+        <br>
+        <label for="type">Types: </label>
+        <input type="text" name="type" id="types" value=<%= pokemonEdit.type %>> 
+        <br>
+        <label for="hp">HP: </label>
+        <input type="number" name="stats.hp" id="hp" value=<%= pokemonEdit.stats.hp %>>
+        <br>
+        <label for ="attack">Attack: </label>
+        <input type="number" name="stats.attack" id="attack" value=<%=pokemonEdit.stats.attack %>>
+        <br>
+        <label for="defense">Defense: </label>
+        <input type="number" name="stats.defense" id="defense" value=<%= pokemonEdit.stats.defense %>>
+        <br>
+        <input type="submit" value="Update Pokemon">
     </form>
 </body>
 </html>
