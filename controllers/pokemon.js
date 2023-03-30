@@ -22,6 +22,7 @@ router.get('/pokemon/:id/edit', (req, res) => {
 
 router.post('/pokemon', (req, res) =>{
     let newPokemon = req.body;
+    newPokemon.id = pokemon.length;
     pokemon.push(newPokemon);
     res.redirect('/pokemon');
 })

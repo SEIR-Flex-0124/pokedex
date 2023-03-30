@@ -2,5 +2,18 @@
     <h1>This is an individual Pokemon</h1>
     <img src=<%= pokeman.img %> alt="pokemon image">
     <h2>Name: <%= pokeman.name %></h2>
+
+    <h3>Types: </h3>
+    <ul>
+        <% pokeman.type.forEach(type => { %>
+        <li><%= type %></li>
+    <% }) %>
+    </ul>
+
+    <h3>Stats:</h3>
+    <p>HP: <%= pokeman.stats.hp %></p>
+    <p>Attack: <%= pokeman.stats.attack %></p>
+    <p>Defense: <%= pokeman.stats.defense %></p>
+
 </body>
 </html>
