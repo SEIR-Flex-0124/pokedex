@@ -37,6 +37,7 @@ app.get('/pokemon/edit/:id/', (req, res) => {
 app.get('/pokemon/:id', (req, res) => {
     let id = req.params.id
     let thisPokemon = pokemonList[id]
+    console.log(thisPokemon)
     res.render('show.ejs', {pokemon: thisPokemon, id})
 })
 
