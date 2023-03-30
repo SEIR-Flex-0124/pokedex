@@ -2170,7 +2170,21 @@ module.exports = [
       fleeflag: "94",
       entreeforestlevel: "36"
     }
-  }, {
+  },
+  {
+    name: 'Lickeotto',
+    img: 'https://www.kotaku.com.au/wp-content/uploads/sites/3/2019/06/25/18pas857vfspapng.png',
+    type: [ 'Normal', 'Flying', 'I regret nothing.' ],
+    stats: {
+      hp: '450',
+      attack: '60',
+      defense: '30',
+      spattack: '',
+      spdefense: '',
+      speed: ''
+    }
+  },
+  {
     id: "007",
     name: "Squirtle",
     img: "http://img.pokemondb.net/artwork/squirtle.jpg",
