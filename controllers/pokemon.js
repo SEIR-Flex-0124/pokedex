@@ -6,6 +6,10 @@ router.get("/pokemon", (req, res) => {
     res.render("index.ejs", {pokemon})
 })
 
+router.get("/pokemon/new", (req, res) =>{
+    res.render("new.ejs")
+})
+
 router.get("/pokemon/:id", (req, res) => {
     const individualPokemon = pokemon[req.params.id];
     //console.log(individualPokemon)
