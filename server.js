@@ -12,6 +12,8 @@ app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride("_method")); 
 //is part of methodoverride syntax
 app.use(express.json());
+//to connect css
+app.use(express.static("public"));
 
 // index route
 app.get("/pokemon", (req, res)=>{
