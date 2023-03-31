@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+
+<h1><%= individualPokemon.name %> </h1>
+<img src="<%= individualPokemon.img %>"alt="<%= individualPokemon.name %>">
+<ul>Type:
+    <li> <%= individualPokemon.type[0] %></li>
+    <li> <%= individualPokemon.type[1] %></li>
+</ul>
+
+<ul>Stats:
+    <li> <%= individualPokemon.stats.hp %></li>
+    <li> <%= individualPokemon.stats.attack %></li>
+    <li> <%= individualPokemon.stats.defense %></li>
+</ul>
