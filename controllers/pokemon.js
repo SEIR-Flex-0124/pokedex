@@ -3,26 +3,23 @@ const router = express.Router();
 const pokemon = require('../models/pokemon');
 
 router.get('/pokemon', (req, res) =>{
-    res.render('pokemon/index.ejs', {pokemon: pokemon})
+    res.render('pokemon/index', {pokemon: pokemon})
 })
 
 router.get('/pokemon/new', (req,res) =>{
-    res.render("pokemon/new.ejs")
+    res.render("pokemon/new")
 })
 
 router.get('/pokemon/:id', (req,res) =>{
-    const id = req.params.id;
-    const pokeman = pokemon[id];
-    if (!pokeman) {
-    res.redirect('/pokemon');
-    } else {
-    res.render("pokemon/show.ejs", {pokeman});
-      }
+    const index = parseInt(req.params.id);
+    const pokeman = pokemon[index];
+    res.render("pokemon/show", {pokeman, index});
 })
 
 router.get('/pokemon/:id/edit', (req, res) => {
-    const pokemonEdit = pokemon[req.params.id];
-    res.render('pokemon/edit.ejs', {pokemonEdit, idx: req.params.id})
+    const index = parseInt(req.params.id);
+    const pokemonEdit = pokemon[index];
+    res.render('pokemon/edit', {pokemonEdit, idx: index});
 })
 
 router.post('/pokemon', (req, res) =>{
@@ -42,20 +39,32 @@ router.post('/pokemon', (req, res) =>{
 })
 
 router.put('/pokemon/:id', (req, res) =>{
-    let updatedPokemon = req.body;
+    let updatedPokemon = {
+    id: pokemon.length,
+    name: req.body.name,
+    img: req.body.img,
+    type: [req.body.type],
+    stats:{
+    hp: req.body['stats.hp'],
+    attack: req.body['stats.attack'],
+    defense: req.body['stats.defense'],
+    },
+};
     pokemon[req.params.id] = updatedPokemon;
     res.redirect(`/pokemon/${req.params.id}`);
 })
 
 router.get('/pokemon/:id/delete', (req, res) =>{
-    const pokemonToBeDeleted = pokemon[req.params.id];
-    res.render(`pokemon/delete.ejs`, {pokemonToBeDeleted, idx: req.params.id})
+    const index = parseInt(req.params.id);
+    const pokemonToBeDeleted = pokemon[index];
+    res.render(`pokemon/delete`, {pokemonToBeDeleted, idx: index})
 })
 
 router.delete('/pokemon/:id', (req, res) =>{
-   let deletedPokemon = pokemon[req.params.id];
+   const index = parseInt(req.params.id);
+   let deletedPokemon = pokemon[index];
    console.log(deletedPokemon);
-   pokemon.splice(req.params.id, 1);
+   pokemon.splice(index, 1);
    res.redirect('/pokemon') 
 })
 

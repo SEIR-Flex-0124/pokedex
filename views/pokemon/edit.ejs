@@ -7,8 +7,7 @@
         <label for="img">Image URL:</label>
         <input type="text" name="img" id="img" value=<%= pokemonEdit.img %>>
         <br>
-        <label for="type">Types: </label>
-        <input type="text" name="type" id="types" value=<%= pokemonEdit.type %>> 
+        <input type="text" name="type" id="type" value="<%= pokemonEdit.type.join(',') %>">
         <br>
         <label for="hp">HP: </label>
         <input type="number" name="stats.hp" id="hp" value=<%= pokemonEdit.stats.hp %>>
