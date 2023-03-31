@@ -6,6 +6,7 @@
         <h1>Pokedex</h1>
         <nav>
             <a href="/pokemon/new">Create a New Pokemon</a>
+            
         </nav>
         <ul>
         <% for (var i = 0; i < pokemon.length; i++) { %>
@@ -13,6 +14,9 @@
                 <a href="/pokemon/<%= pokemon[i].id %>"><img src="<%= pokemon[i].img %>"
                     alt="<%= pokemon[i].name %>">
             </a>
+            <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
+                <input type = "submit" value = "DELETE"
+           </form>
             </li>
         <% } %>
         </ul>

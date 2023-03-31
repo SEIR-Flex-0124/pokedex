@@ -31,8 +31,11 @@ const submitEdit = (req, res) => {
 }
 
 const deletePokemon = (req, res) => {
-    pokemon.splice(req.params.id, 1);
-    res.redirect('/pokemon')
+    console.log("deletePokemon")
+    const id = req.params.id
+    const pos = pokemon.findIndex(poke => poke.id === id)
+    pokemon.splice(pos, 1); // starting point, number of things deleted
+    res.redirect('/pokemon/')
 }
 
 const showOnePokemon = (req, res) => {
