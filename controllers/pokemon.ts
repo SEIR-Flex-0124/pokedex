@@ -12,6 +12,10 @@ router.get("/",(req:Request,res:Response)=>{
     res.render("pokemon/index", {pokemon, page})
 })
 
+router.get("/new",(req:Request,res:Response)=>{
+    res.render("pokemon/new")
+})
+
 router.get("/:id",(req:Request,res:Response)=>{
     res.render("pokemon/show", {mon:pokemon[parseInt(req.params.id)]})
 })
