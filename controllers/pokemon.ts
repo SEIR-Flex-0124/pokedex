@@ -5,6 +5,14 @@ const express = require("express");
 const router = express.Router();
 const {pokemon} = require("../models");
 
+pokemon.sort((a:any,b:any)=>{
+    if (parseInt(a.id)<parseInt(b.id)) {
+        return -1;
+    } else if(parseInt(a.id)>parseInt(b.id)){
+        return 1;
+    } else return 0;
+})
+
 router.get("/",(req:Request,res:Response)=>{
     let page;
     if (typeof req.query.page === "undefined"){page = 0}
