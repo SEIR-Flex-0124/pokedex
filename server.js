@@ -42,6 +42,7 @@ app.post('/pokemon', (req, res) => {
         }
     }
     console.log(newPokemon.id)
+    console.log(newPokemon);
     Pokemon.push(newPokemon);
     res.redirect('/pokemon');
 })
@@ -83,10 +84,15 @@ app.put("/pokemon/:indexOfPokemon", (req, res)=>{
 
 // show route
 app.get("/pokemon/:id", (req, res)=>{
+    console.log("start app get")
     let index = req.params.id;
-    // let singlePokemon = Pokemon.find(p => p.id == id);
-    let singlePokemon = Pokemon[index]
-    res.render("./show", {singlePokemon, index: req.params.id})  //, id: req.params.id
+    let singlePokemon = Pokemon.find(p => p.id === index);
+    
+    // loop over pokemon attay to find matching id
+    console.log(singlePokemon.id) 
+    // let singlePokemon = Pokemon[index]
+    res.render("./show", {singlePokemon, index: req.params.id}); //, id: req.params.id
+    console.log("stop app get")
 })
 
 app.get("/*", (req, res)=>{

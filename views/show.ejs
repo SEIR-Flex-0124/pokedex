@@ -1,7 +1,7 @@
 <%- include('./header.ejs') %>
 <div>
 <h1>
-    Pokedex Entry: <%= singlePokemon.id %>
+    Pokedex Entry: <%= singlePokemon.id %></h1>
     <div class="container">
         <img src = "<%= singlePokemon.img %>">
         <h3><%= singlePokemon.name%></h3>
@@ -27,7 +27,6 @@
     </form>
     <button onclick = "window.location.href='http://localhost:4000/pokemon/<%=index; %>/edit';">edit pokemon</button>
     <button onclick = "window.location.href='http://localhost:4000/pokemon';">Return to Home</button> 
-</h1>
 </div>
 </body>
 </html>
