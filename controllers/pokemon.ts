@@ -38,6 +38,19 @@ router.get("/:id",(req:Request,res:Response)=>{
     res.render("pokemon/show", {mon})
 })
 
+router.get("/:id/edit",(req:Request,res:Response)=>{
+    const id:string = req.params.id;
+    let mon:any;
+    for (let i = 0; i < pokemon.length; i++) {
+        const element = pokemon[i];
+        if(element.id===id){
+            mon=element;
+            i=pokemon.length;
+        }
+    }
+    res.render("pokemon/edit", {mon})
+})
+
 router.post("",(req:Request,res:Response)=>{
     const newMon = req.body;
     newMon.type = [newMon.type1];
