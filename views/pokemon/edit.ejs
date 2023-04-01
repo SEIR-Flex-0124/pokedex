@@ -8,57 +8,58 @@
 </head>
 <body>
     <%- include("../partials/poke-nav.ejs") %>
+    <a href="/pokemon/<%= mon.id %>">Go back w/o saving</a>
     <form action="/pokemon" method="post">
         <div class="main" id="main">
             <h3>Main</h3>
             <label for="name">Name: </label>
-            <input required type="text" name="name" id="name">
+            <input required type="text" value="<%= mon.name %>" name="name" id="name">
             <br>
             <br>
             <label for="id">ID Number: </label>
-            <input required type="text" name="id" id="id">
+            <input required type="text" value="<%= mon.id %>" name="id" id="id">
             <br>
             <br>
             <label for="img">Image URL: </label>
-            <input required type="text" name="img" id="img">
+            <input required type="text" value="<%= mon.img %>" name="img" id="img">
         </div>
         <br>
         <hr>
         <div class="types" id="types">
             <h3>Types</h3>
             <label for="type1">Primary Type: </label>
-            <input required type="text" name="type1" id="type1">
+            <input required type="text" value="<%= mon.type[0] %>" name="type1" id="type1">
             <br>
             <br>
             <label for="type2">Secondary Type (optional): </label>
-            <input type="text" name="type2" id="type2">
+            <input type="text"  value="<%= mon.type[1] %>" name="type2" id="type2">
         </div>
         <br>
         <hr>
         <div class="stats" id="stats">
             <h3>Stats</h3>
             <label for="hp">HP: </label>
-            <input required type="text" name="hp" id="hp">
+            <input required type="text" value="<%= mon.stats.hp %>" name="hp" id="hp">
             <br>
             <br>
             <label for="attack">Attack: </label>
-            <input required type="text" name="attack" id="attack">
+            <input required type="text" value="<%= mon.stats.attack %>" name="attack" id="attack">
             <br>
             <br>
             <label for="defense">Defense: </label>
-            <input required type="text" name="defense" id="defense">
+            <input required type="text" value="<%= mon.stats.defense %>" name="defense" id="defense">
             <br>
             <br>
             <label for="spattack">Special Attack: </label>
-            <input required type="text" name="spattack" id="spattack">
+            <input required type="text" value="<%= mon.stats.spattack %>" name="spattack" id="spattack">
             <br>
             <br>
             <label for="spdefense">Special Defense: </label>
-            <input required type="text" name="spdefense" id="spdefense">
+            <input required type="text" value="<%= mon.stats.spdefense %>" name="spdefense" id="spdefense">
             <br>
             <br>
             <label for="speed">Speed: </label>
-            <input required type="text" name="speed" id="speed">
+            <input required type="text" value="<%= mon.stats.speed %>" name="speed" id="speed">
         </div>
         <br>
         <hr>
