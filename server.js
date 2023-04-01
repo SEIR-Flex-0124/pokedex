@@ -49,7 +49,6 @@ app.get("/pokemon/:id/edit", (req,res) => {
 })
 
 app.put("/pokemon/:index",(req,res) => {
-    console.log(req.body)
     pokemons[req.params.index].name = req.body.name;
     res.redirect("/pokemon")
 })
@@ -65,7 +64,9 @@ app.get("/*", (req,res) => {
 //Post - create
 app.post("/pokemon",(req,res) => {
     let newPokemon = req.body;
+    newPokemon.type = newPokemon.type.split(",");
     pokemons.unshift(newPokemon);
+    console.log(newPokemon)
     res.redirect("/pokemon");
 })
 
