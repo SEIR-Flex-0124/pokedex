@@ -1,0 +1,23 @@
+section.mon-info{
+    display: inline-flex;
+    background-color: white;
+    border: 5px black solid;
+    border-radius: 10px;
+}
+
+section#mon-main{
+    /* display: flexbox; */
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#mon-main h1 {
+    font-size: xx-large;
+}
+
+span.mon-type{
+    background-color: whitesmoke;
+    border: 3px lightslategray solid;
+    border-radius: 10px;
+}

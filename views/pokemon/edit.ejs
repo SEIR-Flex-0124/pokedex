@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/basic-style.css">
+    <title>Edit Entry - <%= mon.name %></title>
+</head>
+<body>
+    <%- include("../partials/poke-nav.ejs") %>
+    <a href="/pokemon/<%= mon.id %>">Go back w/o saving</a>
+    <form action="/pokemon/<%= mon.id %>?_method=put" method="post">
+        <div class="main" id="main">
+            <h3>Main</h3>
+            <label for="name">Name: </label>
+            <input required type="text" value="<%= mon.name %>" name="name" id="name">
+            <br>
+            <br>
+            <label for="id">ID Number: </label>
+            <input required type="text" value="<%= mon.id %>" name="id" id="id">
+            <br>
+            <br>
+            <label for="img">Image URL: </label>
+            <input required type="text" value="<%= mon.img %>" name="img" id="img">
+        </div>
+        <br>
+        <hr>
+        <div class="types" id="types">
+            <h3>Types</h3>
+            <label for="type1">Primary Type: </label>
+            <input required type="text" value="<%= mon.type[0] %>" name="type1" id="type1">
+            <br>
+            <br>
+            <label for="type2">Secondary Type (optional): </label>
+            <input type="text"  value="<%= mon.type[1] %>" name="type2" id="type2">
+        </div>
+        <br>
+        <hr>
+        <div class="stats" id="stats">
+            <h3>Stats</h3>
+            <label for="hp">HP: </label>
+            <input required type="text" value="<%= mon.stats.hp %>" name="hp" id="hp">
+            <br>
+            <br>
+            <label for="attack">Attack: </label>
+            <input required type="text" value="<%= mon.stats.attack %>" name="attack" id="attack">
+            <br>
+            <br>
+            <label for="defense">Defense: </label>
+            <input required type="text" value="<%= mon.stats.defense %>" name="defense" id="defense">
+            <br>
+            <br>
+            <label for="spattack">Special Attack: </label>
+            <input required type="text" value="<%= mon.stats.spattack %>" name="spattack" id="spattack">
+            <br>
+            <br>
+            <label for="spdefense">Special Defense: </label>
+            <input required type="text" value="<%= mon.stats.spdefense %>" name="spdefense" id="spdefense">
+            <br>
+            <br>
+            <label for="speed">Speed: </label>
+            <input required type="text" value="<%= mon.stats.speed %>" name="speed" id="speed">
+        </div>
+        <br>
+        <hr>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

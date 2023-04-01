@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="/css/basic-style.css">
+    <title>Pokedex Menu</title>
+</head>
+<body>
+    <%- include('../partials/poke-nav.ejs') %>
+    <h1>Pokémon</h1>
+    <div class="pokedex" id="pokedex">
+        <ul class="dex-page" id="dex-page">
+            <% for( let i = 0+page*amtMonPerIdxPage; ((i < pokemon.length)&&(i<(page+1)*amtMonPerIdxPage)); i++ ) { %>
+                <% const mon = pokemon[i] %>
+                <li class="mon mon-<%= ("000"+i.toString()).slice(-3) %>" id="mon-<%= ("000"+i.toString()).slice(-4) %>">
+                    <a href="/pokemon/<%= mon.id %>">
+                        <img src="<%= mon.img %>" height="100vh" alt="">
+                        <h3 class="poke-name"><%= mon.name %></h3>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+        <div class="page-buttons" id="page-buttons">
+            <% if (page<=0) { %>
+                <button class="page-button redirect disabled-button">←Back</button>
+            <% }else{ %>
+                <a href="/pokemon?page=<%= page-1 %>">
+                    <button class="page-button redirect">←Back</button>
+                </a>
+            <% } %>
+            <% if ((page+1)*amtMonPerIdxPage>pokemon.length) { %>
+                <button class="page-button redirect disabled-button">Next→</button>
+            <% } else { %>
+                <a href="/pokemon?page=<%= page+1 %>">
+                    <button class="page-button redirect">Next→</button>
+                </a>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

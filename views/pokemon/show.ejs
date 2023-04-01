@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/basic-style.css">
+    <link rel="stylesheet" href="/css/show_style.css">
+    <title>Pokedex Entry - <%= mon.name %></title>
+</head>
+<body>
+    <%- include('../partials/poke-nav.ejs') %>
+    <a href="/pokemon?page=<%= idxPg %>">Go back to index</a>
+    <a href="/pokemon/<%= mon.id %>/edit">Edit this entry</a>
+    <a href="/pokemon/<%= mon.id %>/delete">Delete this entry</a>
+    <section class="mon">
+        <section class="mon-info mon-main" id="mon-main">
+            <h1 class="mon-name" id="mon-name">
+                <%= mon.name %>
+            </h1>
+            <h2 class="mon-id" id="mon-id">
+                #<%= mon.id %>
+            </h2>
+            <img src="<%= mon.img %>" alt="Picture of <%= mon.name %>" class="mon-img" id="mon-img">
+            <div class="mon-types" id="mon-types">
+                <% for( let i = 0; i < mon.type.length; i++ ) { %>
+                    <% const type = mon.type[i] %>
+                    <span class="mon-type mon-types" id="mon-type<%= i %>">
+                        <%= type %>
+                    </span>
+                <% } %>
+            </div>
+        </section>
+        <section class="mon-info mon-stats mon-stats-sect" id="mon-stats-sect">
+            <ul class="mon-stats mon-stats-ul" id="mon-stats-ul">
+                <li class="hp">HP: <%= mon.stats.hp %></li>
+                <li class="attack">Attack: <%= mon.stats.attack %></li>
+                <li class="defense">Defense: <%= mon.stats.defense %></li>
+                <li class="spattack">Special Attack: <%= mon.stats.spattack %></li>
+                <li class="spdefense">Special Defense: <%= mon.stats.spdefense %></li>
+                <li class="speed">Speed: <%= mon.stats.speed %></li>
+            </ul>
+        </section>
+    </section>
+</body>
+</html>
