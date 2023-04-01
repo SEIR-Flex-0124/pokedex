@@ -6,13 +6,18 @@ const express = require("express");
 const router = express.Router();
 const {pokemon} = require("../models");
 
-pokemon.sort((a:any,b:any)=>{
-    if (parseInt(a.id)<parseInt(b.id)) {
-        return -1;
-    } else if(parseInt(a.id)>parseInt(b.id)){
-        return 1;
-    } else return 0;
-})
+function sortPokemon():void {
+    pokemon.sort((a:any,b:any)=>{
+        if (parseInt(a.id)<parseInt(b.id)) {
+            return -1;
+        } else if(parseInt(a.id)>parseInt(b.id)){
+            return 1;
+        } else return 0;
+    })
+}
+
+sortPokemon();
+
 
 const amtMonPerIdxPage:number = 16;
 let idxPg:number;
@@ -75,8 +80,9 @@ router.post("",(req:Request,res:Response)=>{
         speed:newMon.speed,
     };
     newMon.stats=stats;
-    console.log(newMon);
+    // console.log(newMon);
     pokemon.push(newMon);
+    sortPokemon();
     res.redirect(`/pokemon/${newMon.id}`);
 })
 
@@ -111,7 +117,8 @@ router.put("/:id",(req:Request,res:Response)=>{
     // pokemon.push(newMon);
     // monToEdit = newMon;
     pokemon[oldArrIdx] = newMon;
-    console.log(pokemon[oldArrIdx])
+    // console.log(pokemon[oldArrIdx])
+    sortPokemon();
     res.redirect(`/pokemon/${newMon.id}`);
 })
 
