@@ -33,26 +33,26 @@ router.get("/pokemon/:id/edit", (req, res) => {
 
 router.put("/pokemon/:id", (req, res) => {
     let updatedPokemon = req.body;
-    console.log(updatedPokemon);
+    //console.log(updatedPokemon);
     pokemon[req.params.id] = updatedPokemon
     res.redirect("/pokemon")
 
 })
 
-// router.put('/:id', (req, res) => {
-//     let updatedFruit = req.body;
-//     if(!updatedFruit.color) updatedFruit.color = "Blue"
-//     if(updatedFruit.readyToEat === 'true') updatedFruit.readyToEat = true;
-//     else updatedFruit.readyToEat = false;
-//     console.log(updatedFruit);
-//     fruits[req.params.id] = updatedFruit;
-//     res.redirect(`/fruits/${req.params.id}`);
-// })
 
-// router.delete("/pokemon/:id", (req, res) => {
-//     pokemon.splice(req.params.id);
-//     res.redirect("/pokemon");
-// })
+router.get("/pokemon/:id/delete", (req, res) => {
+    const pokemonToDelete = pokemon[req.params.id];
+    //console.log(pokemonToDelete)
+    res.render("./delete.ejs", {pokemonToDelete, idx: req.params.id});
+})
+
+router.delete("/pokemon/:id", (req, res) => {
+    let deletedPokemon = pokemon[req.params.id];
+    console.log(deletedPokemon);
+    pokemon.splice (req.params.id, 1);
+    res.redirect("/pokemon")
+})
+
 
 
 
