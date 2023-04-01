@@ -9,7 +9,7 @@
 <body>
     <%- include("../partials/poke-nav.ejs") %>
     <a href="/pokemon/<%= mon.id %>">Go back w/o saving</a>
-    <form action="/pokemon" method="post">
+    <form action="/pokemon/<%= mon.id %>?_method=put" method="post">
         <div class="main" id="main">
             <h3>Main</h3>
             <label for="name">Name: </label>
