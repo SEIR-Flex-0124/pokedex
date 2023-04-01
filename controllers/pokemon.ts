@@ -14,11 +14,13 @@ pokemon.sort((a:any,b:any)=>{
     } else return 0;
 })
 
+const amtMonPerIdxPage:number = 16;
+let idxPg:number;
+
 router.get("/",(req:Request,res:Response)=>{
-    let page;
-    if (typeof req.query.page === "undefined"){page = 0}
-    else {page = parseInt(req.query.page!.toString())}
-    res.render("pokemon/index", {pokemon, page})
+    if (typeof req.query.page === "undefined"){idxPg = 0}
+    else {idxPg = parseInt(req.query.page!.toString())}
+    res.render("pokemon/index", {pokemon, page:idxPg, amtMonPerIdxPage})
 })
 
 router.get("/new",(req:Request,res:Response)=>{
@@ -32,10 +34,17 @@ router.get("/:id",(req:Request,res:Response)=>{
         const element = pokemon[i];
         if(element.id===id){
             mon=element;
+            for (let j = 0; (j*amtMonPerIdxPage) < pokemon.length; j++) {
+                if(j*amtMonPerIdxPage>i){
+                    j=(pokemon.length/amtMonPerIdxPage)+1;
+                } else {
+                    idxPg=j;
+                }
+            }
             i=pokemon.length;
         }
     }
-    res.render("pokemon/show", {mon})
+    res.render("pokemon/show", {mon, idxPg})
 })
 
 router.get("/:id/edit",(req:Request,res:Response)=>{
@@ -48,7 +57,7 @@ router.get("/:id/edit",(req:Request,res:Response)=>{
             i=pokemon.length;
         }
     }
-    res.render("pokemon/edit", {mon})
+    res.render("pokemon/edit", {mon, idxPg})
 })
 
 router.post("",(req:Request,res:Response)=>{
