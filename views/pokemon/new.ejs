@@ -1,0 +1,28 @@
+<%- include('../header.ejs', {name: "Enter a new Pokemon"}) %>
+<div class="pokemon-container">
+    <h1>Enter a new Pokemon Below</h1>
+    <form method="POST" action="/pokemon">
+        <label for ="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="img">Image URL:</label>
+        <input type="text" name="img" id="img">
+        <br>
+        <label for="type">Types: </label>
+        <input type="text" name="type" id="types">
+        <br>
+        <label for="hp">HP: </label>
+        <input type="number" name="stats.hp" id="hp">
+        <br>
+        <label for ="attack">Attack: </label>
+        <input type="number" name="stats.attack" id="attack">
+        <br>
+        <label for="defense">Defense: </label>
+        <input type="number" name="stats.defense" id="defense">
+        <br>
+        <input class="button" type="submit" value="Submit Pokemon">
+    </form>
+
+</div>
+</body>
+</html>
