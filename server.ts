@@ -5,11 +5,15 @@ const app = express();
 
 const PORT:number=4000;
 
+const methodOverride = require("method-override");
+
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
 app.use(express.urlencoded({extended:false}));
+
+app.use(methodOverride("_method"));
 
 const models = require("./models");
 const {pokemon} = models;
