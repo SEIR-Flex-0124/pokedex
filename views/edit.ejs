@@ -1,0 +1,19 @@
+<%- include('header.ejs') %>
+<h1>Edit</h1>
+<body>
+    <form method="POST" action="/pokemon/<%= idx %>?_method=PUT">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value=<%=editPokemon.name %>>
+      <br>
+      <label for="Stats">Stats:</label>
+      <input type="text" name="stats" id="stats" value=<%=editPokemon.stats %>>
+      <br>
+      <label for="type">Type: </label>
+      <input type="text" name="type" id="type" value=<%=editPokemon.type %>>
+      <br>
+      <label for="img">Image: </label>
+      <input type="text" name="img" id="img"  value=<%=editPokemon.img %>>
+      <br>
+      <input type="submit" value="Create your personal pokemon">
+    </form>
+  </body>
