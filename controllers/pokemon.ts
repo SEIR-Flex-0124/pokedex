@@ -122,4 +122,43 @@ router.put("/:id",(req:Request,res:Response)=>{
     res.redirect(`/pokemon/${newMon.id}`);
 })
 
+router.get("/:id/delete",(req:Request,res:Response)=>{
+    const id:string = req.params.id;
+    let mon:any;
+    for (let i = 0; i < pokemon.length; i++) {
+        const element = pokemon[i];
+        if(element.id===id){
+            mon=element;
+            for (let j = 0; (j*amtMonPerIdxPage) < pokemon.length; j++) {
+                if(j*amtMonPerIdxPage>i){
+                    j=(pokemon.length/amtMonPerIdxPage)+1;
+                } else {
+                    idxPg=j;
+                }
+            }
+            i=pokemon.length;
+        }
+    }
+    res.render("pokemon/delete", {mon, idxPg})
+})
+
+router.delete("/:id",(req:Request,res:Response)=>{
+    const id:string = req.params.id;
+    // let monToEdit:any;
+    let oldArrIdx:number = 0;
+    for (let i = 0; i < pokemon.length; i++) {
+        const element = pokemon[i];
+        if(element.id===id){
+            oldArrIdx=i;
+            // monToEdit=element;
+            i=pokemon.length;
+        }
+    }
+    
+    pokemon.splice(oldArrIdx,1);
+
+    sortPokemon();
+    res.redirect(`/pokemon?page=${idxPg}`);
+})
+
 module.exports=router;
