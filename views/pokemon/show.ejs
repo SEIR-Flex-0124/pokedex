@@ -12,7 +12,7 @@
     <a href="/pokemon?page=<%= idxPg %>">Go back to index</a>
     <a href="/pokemon/<%= mon.id %>/edit">Edit this entry</a>
     <a href="/pokemon/<%= mon.id %>/delete">Delete this entry</a>
-    <section class="mon-main" id="mon-main">
+    <section class="mon-info mon-info mon-main" id="mon-main">
         <h1 class="mon-name" id="mon-name">
             <%= mon.name %>
         </h1>
@@ -29,7 +29,7 @@
             <% } %>
         </div>
     </section>
-    <section class="mon-stats mon-stats-sect" id="mon-stats-sect">
+    <section class="mon-info mon-stats mon-stats-sect" id="mon-stats-sect">
         <ul class="mon-stats mon-stats-ul" id="mon-stats-ul">
             <li class="hp">HP: <%= mon.stats.hp %></li>
             <li class="attack">Attack: <%= mon.stats.attack %></li>
