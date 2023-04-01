@@ -1,5 +1,7 @@
 #poke-nav{
     list-style: none;
+    background-color: rgb(189, 28, 28);
+    border-bottom: 5px solid whitesmoke;
 }
 
 #poke-nav ul li {
