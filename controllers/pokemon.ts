@@ -80,4 +80,39 @@ router.post("",(req:Request,res:Response)=>{
     res.redirect(`/pokemon/${newMon.id}`);
 })
 
+router.put("/:id",(req:Request,res:Response)=>{
+    const id:string = req.params.id;
+    // let monToEdit:any;
+    let oldArrIdx:number = 0;
+    for (let i = 0; i < pokemon.length; i++) {
+        const element = pokemon[i];
+        if(element.id===id){
+            oldArrIdx=i;
+            // monToEdit=element;
+            i=pokemon.length;
+        }
+    }
+
+    const newMon = req.body;
+    newMon.type = [newMon.type1];
+    if(typeof newMon.type2 !== "undefined"){newMon.type.push(newMon.type2)}
+    // const testarr:Array<any> = [];
+    // testarr.push
+    const stats: Object = {
+        hp: newMon.hp,
+        attack:newMon.attack,
+        defense:newMon.defense,
+        spattack:newMon.spattack,
+        spdefense:newMon.spdefense,
+        speed:newMon.speed,
+    };
+    newMon.stats=stats;
+    // console.log(newMon);
+    // pokemon.push(newMon);
+    // monToEdit = newMon;
+    pokemon[oldArrIdx] = newMon;
+    console.log(pokemon[oldArrIdx])
+    res.redirect(`/pokemon/${newMon.id}`);
+})
+
 module.exports=router;
