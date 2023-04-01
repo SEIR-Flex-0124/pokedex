@@ -1,0 +1,27 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "# Pokedex",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Signal-flow12/pokedex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Signal-flow12/pokedex/issues"
+  },
+  "homepage": "https://github.com/Signal-flow12/pokedex#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method": "^2.0.0",
+    "method-override": "^3.0.0",
+    "override": "^0.0.1"
+  }
+}
