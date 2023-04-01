@@ -1,6 +1,7 @@
 <%- include('../header.ejs', {name: "Edit " + pokemonEdit.name}) %>
+<div class="pokemon-container">
     <h1>Edit your pokemon below</h1>
-    <form method="POST" action="/pokemon/<%= idx %>?_method=PUT">
+    <form method="POST" action="/pokemon/<%= index %>?_method=PUT">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" value=<%= pokemonEdit.name %>>
         <br>
@@ -18,7 +19,9 @@
         <label for="defense">Defense: </label>
         <input type="number" name="stats.defense" id="defense" value=<%= pokemonEdit.stats.defense %>>
         <br>
-        <input type="submit" value="Update Pokemon">
+        <input class="button" type="submit" value="Update Pokemon">
     </form>
+
+    </div>
 </body>
 </html>

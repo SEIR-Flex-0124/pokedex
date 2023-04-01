@@ -8,6 +8,7 @@ const app = express();
 const pokemonController = require('./controllers/pokemon');
 
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended:true}));
 app.use(methodOverride("_method"));

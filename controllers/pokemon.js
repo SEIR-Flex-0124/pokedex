@@ -19,12 +19,11 @@ router.get('/pokemon/:id', (req,res) =>{
 router.get('/pokemon/:id/edit', (req, res) => {
     const index = parseInt(req.params.id);
     const pokemonEdit = pokemon[index];
-    res.render('pokemon/edit', {pokemonEdit, idx: index});
+    res.render('pokemon/edit', {pokemonEdit, index});
 })
 
 router.post('/pokemon', (req, res) =>{
     let newPokemon = {
-    id: pokemon.length,
     name: req.body.name,
     img: req.body.img,
     type: [req.body.type],
@@ -40,7 +39,6 @@ router.post('/pokemon', (req, res) =>{
 
 router.put('/pokemon/:id', (req, res) =>{
     let updatedPokemon = {
-    id: pokemon.length,
     name: req.body.name,
     img: req.body.img,
     type: [req.body.type],
