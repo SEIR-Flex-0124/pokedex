@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex Entry - <%= mon.name %></title>
+    <title>Are you sure you want to delete entry of <%= mon.name %>?</title>
 </head>
 <body>
     <%- include('../partials/poke-nav.ejs') %>
     <a href="/pokemon?page=<%= idxPg %>">Go back to index</a>
-    <a href="/pokemon/<%= mon.id %>/edit">Edit this entry</a>
+    <a href="/pokemon/<%= mon.id %>">Go back to entry</a>
+    <h2>Are you sure you want to delete this Pokédex entry?</h2>
     <section class="mon-main" id="mon-main">
         <h1 class="mon-name" id="mon-name">
             <%= mon.name %>
@@ -37,5 +38,12 @@
             <li class="speed">Speed: <%= mon.stats.speed %></li>
         </ul>
     </section>
+    <form action="/pokemon/<%= mon.id %>?_method=DELETE" method="post" id="delete-mon"></form>
+    <button type="submit" form="delete-mon">Yes, delete this entry</button>
+    <a href="/pokemon/<%= mon.id %>">
+        <button formaction="">
+            No, go back
+        </button>
+    </a>
 </body>
 </html>
