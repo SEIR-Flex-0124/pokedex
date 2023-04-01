@@ -8,6 +8,8 @@
 </head>
 <body>
     <%- include('../partials/poke-nav.ejs') %>
+    <a href="/pokemon?page=<%= idxPg %>">Go back to index</a>
+    <a href="/pokemon/<%= mon.id %>/edit">Edit this entry</a>
     <section class="mon-main" id="mon-main">
         <h1 class="mon-name" id="mon-name">
             <%= mon.name %>
