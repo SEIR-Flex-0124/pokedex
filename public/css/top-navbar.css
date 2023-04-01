@@ -1,0 +1,7 @@
+#poke-nav{
+    list-style: none;
+}
+
+#poke-nav ul li {
+    display: inline;
+}
