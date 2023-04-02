@@ -1,6 +1,6 @@
 <%- include('header.ejs', {name: "Edit this Pokemon"})%>
 
-<h1>Edit this Pokemon below: </h1>
+<h1>Edit this Pokemon: </h1>
 <form method="POST" action="/fruits/<%= idx %>?_method=PUT">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" value=<%= pokemonToBeEdited.name %>>
