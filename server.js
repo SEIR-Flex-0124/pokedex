@@ -8,12 +8,15 @@ const methodOverride = require("method-override");
 // middleware
 app.set('view engine', 'ejs');
 // takes data from submitied form, encodes it and makesa body key that we can use later on, hwere we append it to the array... (allows us to use req.body)
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride("_method")); 
 //is part of methodoverride syntax
 app.use(express.json());
-//to connect css
-app.use(express.static("public"));
+// to connect css(was static)
+
+
+
 
 // index route
 app.get("/pokemon", (req, res)=>{
@@ -28,7 +31,7 @@ app.get("/pokemon/new", (req, res)=>{
 app.post('/pokemon', (req, res) => {
     let newPokemon = {
         name: req.body.name,
-        id: (Pokemon.length + 1),
+        id: parseInt(Pokemon.length + 1),
         type: req.body.type.split(","),
         img: req.body.img,
         misc: {
@@ -58,7 +61,7 @@ app.put("/pokemon/:indexOfPokemon", (req, res)=>{
 
     let editedPokemon = {
         name: req.body.name,
-        id: (Pokemon.length + 1),
+        id: parseInt(Pokemon.length + 1),
         type: req.body.type.split(","),
         img: req.body.img,
         misc: {
@@ -86,12 +89,10 @@ app.put("/pokemon/:indexOfPokemon", (req, res)=>{
 app.get("/pokemon/:id", (req, res)=>{
     console.log("start app get")
     let index = req.params.id;
-    let singlePokemon = Pokemon.find(p => p.id === index);
+    let singlePokemon = Pokemon.find(p => p.id == index);
     
     // loop over pokemon attay to find matching id
-    console.log(singlePokemon.id) 
-    // let singlePokemon = Pokemon[index]
-    res.render("./show", {singlePokemon, index: req.params.id}); //, id: req.params.id
+    res.render("./show", {singlePokemon, index});
     console.log("stop app get")
 })
 
