@@ -45,8 +45,40 @@ app.post('/pokemon', (req, res) => {
       }
   }
 
-  newPokemon.misc.abilities.normal
   pokemon.push(newPokemon);
+  res.redirect('/pokemon');
+})
+
+app.get('/pokemon/:id/edit', (req, res) => {
+  let singlePokemon = pokemon[req.params.id];
+  console.log(singlePokemon);
+  res.render('edit', {singlePokemon, index: req.params.id});
+})
+
+app.put('/pokemon/:id', (req, res) => {
+  let editedPokemon = {
+      name: req.body.name,
+      id: req.body.id,
+      type: req.body.type,
+      img: req.body.img,
+      misc: {
+          classification: req.body.classification,
+          weight: req.body.weight,
+          height: req.body.height,
+          abilities: {
+              normal: req.body.nability,
+              hidden: req.body.hability
+          }
+      }
+  }
+
+  pokemon[req.params.id] = editedPokemon;
+  res.redirect('/pokemon');
+})
+
+// delete
+app.delete('/pokemon/:id', (req, res) => {
+  pokemon.splice(req.params.id, 1);
   res.redirect('/pokemon');
 })
 
