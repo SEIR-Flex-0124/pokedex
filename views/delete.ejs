@@ -2,10 +2,11 @@
 
 <body>
     <h1>Are you sure you want to delete <%= singlePokemon.name %>?</h1>
-    <div class = 'show'>
+    
         <img src=<%= singlePokemon.img %> alt="pokemon image">
         <div class="deleteBtns">
-            <button>Yes</button>
-            <button>No</button>
-        </div>
+            <form method="POST" action="/pokemon/<%= idx %>?_method=DELETE">
+                <input type="submit" value="Yes">
+            </form>
+    
 </body>
