@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/show.js" defer></script>
+</head>
+<body>
+    <header>
+        <!--Pokédex Header-->
+    </header>
+    <main>
+        <!--Pokédex-->
+        <div class="pokedex">
+            <div class="top">
+                <div class="blue"></div>
+                <div class="ryg">
+                    <div class="red"></div>
+                    <div class="yellow"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="topName">
+                    <!--Top Name-->
+                </div>
+            </div>
+            <div class="screenBorder">
+                <div class="screen">
+                    <div class="headerDiv <%= selectedPokemon.type[0] %>">
+                        <h3 class="title"><%= selectedPokemon.name %></h3>
+                    </div>
+                    <div class="pokemonSelect">
+                        <!--Pokémon Select-->
+                            <img src="<%= selectedPokemon.img %>">
+                    </div>
+                    <div class="footerDiv <%= selectedPokemon.type[0] %>">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <!--D-Pad & A/B Buttons-->
+                
+                <div class="dpad">
+                    <div class="dpad-up"><button class="up"></button></div>
+                    <div class="dpad-down"><button class="down"></button></div>
+                    <div class="dpad-left"><a href="/pokemon/<%= String(Number(selectedPokemon.id) - 1).padStart(3, '0') %>"><button class="left"></button></a></div>
+                    <div class="dpad-right"><a href="/pokemon/<%= String(Number(selectedPokemon.id) + 1).padStart(3, '0') %>"><button class="right"></button></a></div>
+                    <div class="dpad-middle"></div>
+                </div>
+                <div class="ab">
+                    <!--A & B Buttons-->
+                    <div class="bButton">
+                        <a href="/pokemon"><button class="buttonB">B</button></a>
+                    </div>
+                    <div class="aButton">
+                        <button class="buttonA">A</button>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons2">
+                <!--Bottom Buttons-->
+                <div class="selectDiv">
+                    <a href="/pokemon"><button class="select">Pokémon</button></a>
+                </div>
+                <div class="startDiv">
+                    <a href="/myteam"><button class="start">My Team</button></a>
+                </div>
+                <div class="addDiv">
+                    <form method="POST" action="/myteam">
+                        <input type="hidden" name="id" value="<%= selectedPokemon.id %>">
+                        <button class="add" type="submit">Add To Team</button>
+                    </form>
+                </div>
+                <div class="removeDiv">
+                    <a href="/pokemon/<%= selectedPokemon.id %>/edit"><button class="remove">Edit</button></a>
+                </div>
+            </div>
+            <div class="leftDiv">
+                <div class="leftDivInside">
+                    <div class="leftScreenBorder">
+                        <div class="leftScreen">
+                            <!--Pokemon Information Display-->
+                            <h3>Pokédex Data</h3>
+                            <div class="types">
+                                <% for (let i = 0; i < selectedPokemon.type.length; i++) { %>
+                                    <div class="type<%= i + 1 %> <%= selectedPokemon.type[i] %>"><%= selectedPokemon.type[i] %></div>
+                                <% } %>
+                            </div>
+                            <div class="stats">
+                                <div class="hp">
+                                    <p>HP : <%= selectedPokemon.stats.hp %></p>
+                                    <div class="bar">
+                                        <div class="hpFill" style="width: <%= selectedPokemon.stats.hp/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="attack">
+                                    <p>ATK : <%= selectedPokemon.stats.attack %></p>
+                                    <div class="bar">
+                                        <div class="attackFill" style="width: <%= selectedPokemon.stats.attack/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="defense">
+                                    <p>DEF : <%= selectedPokemon.stats.defense %></p>
+                                    <div class="bar">
+                                        <div class="defenseFill" style="width: <%= selectedPokemon.stats.defense/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="spattack">
+                                    <p>SP ATK : <%= selectedPokemon.stats.spattack %></p>
+                                    <div class="bar">
+                                        <div class="spattackFill" style="width: <%= selectedPokemon.stats.spattack/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="spdefense">
+                                    <p>SP DEF : <%= selectedPokemon.stats.spdefense %></p>
+                                    <div class="bar">
+                                        <div class="spdefenseFill" style="width: <%= selectedPokemon.stats.spdefense/2 %>%"></div>
+                                    </div>
+                                </div>
+                                <div class="speed">
+                                    <p>SPD : <%= selectedPokemon.stats.speed %></p>
+                                    <div class="bar">
+                                        <div class="speedFill" style="width: <%= selectedPokemon.stats.speed/2 %>%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="rightDivInside">
+                    <div class="rightScreenBorder">
+                        <div class="rightScreen">
+                            <!--Other Display-->
+                            <p>Classification :<br> <%= selectedPokemon.misc.classification %></p>
+                            <p>Height : <%= selectedPokemon.misc.height %></p>
+                            <p>Weight : <%= selectedPokemon.misc.weight %></p>                         
+                        </div>
+                    </div>
+                    <div class="rightScreenBorder2">
+                        <div class="rightScreen2">
+                            <!--My Team Display-->
+                            <p>My Team</p>
+                            <!--Team List-->
+                            <div class="myTeamShow">
+                            <% if (myTeam.length > 0) { %>
+                            <% for(let i = 0; i < myTeam.length; i++) { %>
+                                <div class="myTeamSprites">
+                                    <img src="<%= myTeam[i].img %>">
+                                </div>
+                            <% } %>
+                            <% } else { %>
+                                <p class="noPokemon2">No Pokémon In Your Team Yet!</p>
+                            <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,651 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
+html {
+    background-color: antiquewhite;
+}
+
+header {
+    height: 200px;
+}
+
+.pokedex {
+    height: 750px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: #c92438;
+    background: -webkit-linear-gradient(to right, #c92438, #a50026);
+    background: linear-gradient(to right, #c92438, #a50026);
+    border: 2px solid black;
+}
+
+.top {
+    height: 80px;
+    width: 425px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.blue {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #28aafa;
+    border: 2px solid black;
+}
+
+.ryg {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-top: 20px;
+    align-self: flex-start;
+}
+
+.red, .yellow, .green {
+    height: 10px;
+    width: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 2px
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.topName {
+    height: 40px;
+    width: 225px;
+    margin-left: 50px;
+    border-radius: 20px;
+    background-color: #2fdc0d;
+    border: 2px solid black;
+}
+
+.screenBorder {
+    width: 400px;
+    height: 400px;
+    border: 2px solid black; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dadada;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+.screen {
+    font-family: 'Orbitron', sans-serif;
+    width: 360px;
+    height: 360px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headerDiv {
+    background-color:rgba(106, 200, 203, 0.727);
+    height: 60px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Slide Show Div */
+
+.slideshow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    width: 360px;
+}
+
+.sprite {
+    height: 200px;
+    width: 200px;
+}
+
+/* Add home.css change here */
+
+
+
+/* Pokemon List Styling */
+.pokeList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemonLine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pokeList img {
+    width: 100px;
+    height: 100px;
+}
+
+.footerDiv {
+    background-color:rgba(106, 200, 203, 0.727);
+    height: 60px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Pokemon Select */
+
+.pokemonSelect img {
+    height: 250px;
+    width: 250px;
+}
+
+
+/* My Team */
+.myTeamDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.myTeam img {
+    height: 100px;
+    width: 100px;
+}
+
+.noPokemon {
+    display: flex;
+    text-align: center;
+    line-height: 2;
+    margin-left: 135px;
+}
+
+.nameRemove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
+}
+
+
+/* myTeamShow */
+
+.myTeamSelect img {
+    height: 200px;
+    width: 200px;
+}
+
+
+/* New Pokemon */
+
+.newPokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.newPokemon label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttons {
+    height: 200px;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dpad {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform: scale(1.5);
+}
+
+.dpad div {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #a0a0a0;
+    border: 2px solid #606060;
+}
+
+.dpad-up {
+    top: -1px;
+    left: 20px;
+}
+
+.dpad-down {
+    bottom: -5px;
+    left: 20px;
+}
+
+.dpad-left {
+    top: 20px;
+    left: -1px;
+}
+
+.dpad-right {
+    top: 20px;
+    right: -5px;
+}
+
+.dpad-middle {
+    top: 20px;
+    left: 20px;
+}
+
+.ab {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+}
+.aButton, .bButton {
+    margin: 10px;
+}
+
+.buttonA, .buttonB {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #606060;
+    color: #A0A0A0;
+    font-size: larger;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+}
+.up, .down, .left, .right {
+    height: 100%;
+    width: 100%;
+    background-color: #A0A0A0;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.buttons2 {
+    display: flex;
+    padding-bottom: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectDiv, .startDiv, .addDiv, .removeDiv {
+    margin: 0 10px;
+}
+
+.select, .start, .add, .remove {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    height: 30px;
+    width: 70px;
+    background-color: #606060;
+    color: #A0A0A0;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.leftDiv, .rightDiv {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 400px;
+    height: 600px;
+    z-index: -1;
+    border-radius: 20px;
+    background-color:#606060 ;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .leftDiv {
+    top: 25%;
+    transform-origin: left;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rightDiv {
+    top: 25%;
+    transform-origin: right;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leftDivInside, .rightDivInside {
+    height: 580px;
+    width: 380px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #c92438;
+    background: -webkit-linear-gradient(to right, #c92438, #a50026);
+    background: linear-gradient(to right, #c92438, #a50026);
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .leftScreenBorder {
+    border: 2px solid black;
+    height: 450px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada ;
+  }
+
+  .leftScreen {
+    border: 2px solid black;
+    height: 430px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:ghostwhite;
+  }
+
+.types {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.type1, .type2 {
+    border: 2px solid black;
+    padding: 4px 20px;
+    border-radius: 10px;
+}
+
+.Grass {
+    background-color: #77cc5580;
+}
+
+.Fire {
+    background-color: #ff432280;
+}
+
+.Normal {
+    background-color: #aaaa9980;
+}
+
+.Poison {
+    background-color: #aa559980;
+}
+
+.Water {
+    background-color: #3498ff80;
+}
+
+.Electric {
+    background-color: #ffcc3380;
+}
+
+.Ice {
+    background-color: #66ccff80;
+}
+
+.Fighting {
+    background-color: #bb554480;
+}
+
+.Ground {
+    background-color: #ddbb5580;
+}
+
+.Flying{
+    background-color: #8899ff80;
+}
+
+.Psychic{
+    background-color: #ff569980;
+}
+
+.Bug {
+    background-color: #aabb2180;
+}
+
+.Rock {
+    background-color: #bcaa6680;
+}
+
+.Ghost {
+    background-color: #6666bb80;
+}
+
+.Dragon {
+    background-color: #7766ee80;
+}
+
+.stats p {
+    margin-right: 10px;
+    font-size: smaller;
+}
+
+.hp, .attack, .defense, .spattack, .spdefense, .speed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bar {
+    border: 2px solid black;
+    height: 20px;
+    width: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hpFill {
+    height: 100%;
+    background-color: green;
+    opacity: 80%;
+}
+
+.attackFill {
+    height: 100%;
+    background-color: crimson;
+    opacity: 80%;
+}
+
+.defenseFill {
+    height: 100%;
+    background-color: blue;
+    opacity: 80%;
+}
+
+.spattackFill {
+    height: 100%;
+    background-color: darkred;
+    opacity: 80%;
+}
+
+.spdefenseFill {
+    height: 100%;
+    background-color: darkblue;
+    opacity: 80%;
+}
+
+.speedFill {
+    height: 100%;
+    background-color: darkgoldenrod;
+    opacity: 80%;
+}
+
+.rightScreenBorder {
+    border: 2px solid black;
+    height: 350px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada ;
+    margin-bottom: 20px;
+}
+
+.rightScreen {
+    border: 2px solid black;
+    height: 330px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:ghostwhite;
+
+}
+
+.rightScreenBorder2 {
+    border: 2px solid black;
+    height: 150px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada ;
+  }
+
+.rightScreen2 {
+    border: 2px solid black;
+    height: 130px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myTeamShow {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.myTeamSprites img {
+    height: 50px;
+    width: 50px;
+}
+
+.bottomDiv {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 250px;
+    width: 400px;
+    height: 250px;
+    z-index: -1;
+    border-radius: 20px;
+    background-color:#606060 ;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;   
+}
+
+.bottomDivInside {
+    height: 235px;
+    width: 380px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #c92438;
+    background: -webkit-linear-gradient(to right, #c92438, #a50026);
+    background: linear-gradient(to right, #c92438, #a50026);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.bottomScreenBorder {
+    border: 2px solid black;
+    height: 160px;
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #dadada;
+    margin-top: 20px;
+}
+
+.bottomScreen {
+    border: 2px solid black;
+    height: 140px;
+    width: 320px;
+    border-radius: 10px;
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
