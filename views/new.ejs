@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet/main.css" />
     <title>Create a new Pokemon</title>
 </head>
 <body>
-    <h1>Create a new Pokemon</h1>
-    <form method="POST" action="/pokemon">
-        <label for="name">Name</label>
-        <input type="text" placeholder="Name" name="name" id="name">
-        <br>
-        <br>
+    <main>
+        <div id="showTop"><h1>Create a new Pokemon</h1></div>
 
-        <label for="name">Image</label>
-        <input type="text" placeholder="Image" name="image" id="image">
-        <br>
-        <br>
+        <div id="editMid">
+    
+            <form method="POST" action="/pokemon">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Name" name="name" id="name">
+                <br>
+                <br>
+                <label for="name">Image</label>
+                <input type="text" placeholder="Image" name="image" id="image">
+                <br>
+                <br>
+                <label for="name">Type</label>
+                <input type="text" placeholder="Type" name="type" id="type">
+                <br>
+                <br>
+                <label for="name">Stats</label>
+                <input type="text" placeholder="Stats" name="stats" id="stats">
+                <br>
+                <br>
+                <input type="submit" value="Create a Pokemon">
+            </form>
+        </div>
 
-        <label for="name">Type</label>
-        <input type="text" placeholder="Type" name="type" id="type">
-        <br>
-        <br>
-
-        <label for="name">Stats</label>
-        <input type="text" placeholder="Stats" name="stats" id="stats">
-        <br>
-        <br>
-        <br>
-        <input type="submit" value="Create a Pokemon">
-
-    </form>
+    </main>
 </body>
 </html>
