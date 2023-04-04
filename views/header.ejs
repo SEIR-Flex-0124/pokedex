@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <% if(typeof name !== 'undefined') { %>
+        <title><%= name %></title>
+    <% } else { %>
+        <title>Pokedex app</title>
+    <% } %>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href='/pokemon'>My Pokemon</a>
+        <a href='/pokemon/new'>Add a new Pokemon</a>
+        <a href=''>Search Pokedex</a>
+    </nav>

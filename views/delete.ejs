@@ -1,0 +1,12 @@
+<%- include('header.ejs', {name: "Delete this Pokemon"})%>
+
+<body>
+    <h1>Are you sure you want to delete <%= singlePokemon.name %>?</h1>
+    
+        <img src=<%= singlePokemon.img %> alt="pokemon image">
+        <div class="deleteBtns">
+            <form method="POST" action="/pokemon/<%= idx %>?_method=DELETE">
+                <input type="submit" value="Yes">
+            </form>
+    
+</body>
