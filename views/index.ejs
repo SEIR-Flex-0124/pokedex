@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Pokedex</title>
 </head>
 <body>
-    <h1>Index Sample Text</h1>
-    <% for (let i=0;i < pokemon.length;i++) { %>
-        <h3>Name: <%= pokemon[i].name %></h3>
+
+        <div class="heading-container">
+            <h2>Pokedex</h2>
+            <button id="addapokemon">Add a Pokemon</button>
+        </div>
+    <div class="card-background">
+        <div class="pokemon-card">
+    <% for (let i=0; i < 8;i++) { %>
+        <img class="pokemon-img" src=<%= pokemon[i].img %> alt=<%=pokemon[i].name%>>
      <% } %>
+    </div>
+    </div>
+
 </body>
 </html>

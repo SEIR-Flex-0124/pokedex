@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended:false }));
 
 app.get('/', (req, res) => {
-    res.render('home.ejs')
+    res.render('index.ejs')
 });
 
 app.get('/pokedex', (req, res) => {
@@ -21,15 +21,15 @@ app.get('/pokedex/new', (req, res) => {
     res.render('new.ejs')
 });
 
+app.get('/pokedex/delete', (req, res) => {
+    const eachPokemon = pokemon[req.params.id];
+    res.render('delete.ejs', {eachPokemon: eachPokemon, idx: req.params.id})
+});
+
 app.get('/pokedex/:id', (req, res) => {
     const eachPokemon = pokemon[req.params.id];
     res.render('show.ejs', {eachPokemon: eachPokemon, idx: req.params.id})
 });
-
-
-
-
-
 
 
 app.listen(4000, () => {

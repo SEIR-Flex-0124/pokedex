@@ -379,6 +379,45 @@ hr {
   border-width: 0;
   border-top: 1px solid #E1E1E1; }
 
+.heading-container h2,h4 {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 15px;
+  margin-top: 15px;
+  font-family: 'Press Start 2P';
+}
+
+.heading-container {
+  background-color: #FF0000;
+}
+
+#addapokemon {
+  float: right;
+  margin-top: 25px;
+  margin-right: 25px;
+  font-family: 'Press Start 2P'
+}
+
+.pokemon-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+}
+
+.pokemon-img {
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 22%;
+}
+
+.card-background {
+  background-color: #FFDE00;
+  padding-bottom: 20px;
+}
+
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
