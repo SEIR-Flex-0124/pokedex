@@ -40,12 +40,32 @@ app.get('/pokemon/:id', (req,res) => {
     res.render("show.ejs", {pokemons: pokemons, idx: req.params.id});
 });
 
+
 app.put('/pokemon/edit/:id', (req,res) => {
     const type = req.body.type.split(',').map(t => t.trim());
     const editedPokemon = {...req.body, type: type}
     pokemon[req.params.id] = editedPokemon;
     res.render('show.ejs', {pokemons: pokemon[req.params.id], idx: req.params.id})
 });
+
+app.get('/pokemon/delete/:id', async (req, res, next) => {
+    try {
+        const pokemonToDelete = await pokemon.findById(req.params.id);
+        res.render('delete.ejs', {pokemons: pokemonToDelete})
+    } catch(err) {
+        next();
+    }
+})
+
+app.delete('/:id', async (req, res) => {
+    try {
+        const deletedPokemon = await pokemon.findByIdAndDelete(req.params.id);
+        res.redirect('/pokemon');
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
 
 //this go to the end
 app.listen(port, () => {
