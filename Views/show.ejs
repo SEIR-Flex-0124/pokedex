@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-   <h1>Basic Pokémon:</h1>
-   <h2> <%= pokemonCard.name %> </h2>
+   <h1>Basic Pokémon: <%= pokemonCard.id %></h1>
+   <h2>Pokémon name: <%= pokemonCard.name %> </h2>
     <br>
     <img src="<%= pokemonCard.img %>" alt="pokemon image">
     <br>
@@ -35,7 +35,9 @@
     <br>
     <h4>Speed:</h4>
     <%= pokemonCard.stats.speed %>
+    <br>
     
+<a href="/pokemon/ <%= idx %>/edit"><button>Edit this Pokemon</button></a>   
 
 </body>
 </html>

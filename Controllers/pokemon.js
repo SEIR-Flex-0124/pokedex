@@ -12,13 +12,38 @@ router.get('/new', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-    const pokemonCard = Pokemon[req.params.id]
-    res.render('show.ejs', {pokemonCard})
+    const idx = req.params.id
+    const pokemonCard = Pokemon[idx]
+    res.render('show.ejs', {pokemonCard, idx})
 })
 
 router.post('/', (req, res) => {
-    Pokemon.push(req.body)
+    console.log(req.body)
+    const type = req.body.type.split(" ");
+    console.log(type.length)
+    const stats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        spattack: req.body.spattack,
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+    }
+    const newPokemon = {
+        id: req.body.id,
+        name: req.body.name,
+        img: req.body.img,
+        type: type,
+        stats: stats,
+    }
+    Pokemon.push(newPokemon)
     res.redirect(`/pokemon/${Pokemon.length - 1}`)
 })
 
+router.get('/:id/edit', (req, res) => {
+    const idx = req.params.id
+    res.render('edit.ejs', {idx})
+})
+
 module.exports = router;
+

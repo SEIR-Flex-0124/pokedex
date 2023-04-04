@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="/pokemon">
+    <form method="post" action="/pokemon/<%= idx =%>?_method=PUT">
         <input type="text" name="id" placeholder="ID: number">
         <br>
         <input type="text" name="name" placeholder="Pokemon name">
@@ -28,9 +28,11 @@
         <br>
         <input type="text" name="speed" placeholder="speed">
         <br>
+        <input type="text" name="moves" placeholder="Moves">
+        <br>
         <input type="Submit" placeholder="Submit">
     </form>
-    
+
 
 </body>
 </html>
