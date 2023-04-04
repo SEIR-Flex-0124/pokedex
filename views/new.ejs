@@ -1,4 +1,5 @@
-<%-include('./header.ejs')%>
+<%-include('./header.ejs', {name: 'Add a Pokemon'})%>
+    <div class="card-background">
     <title>Add Pokemon</title>
     
     <form method="POST" action="/pokedex" class="add-pokemon-form" style="font-family: 'Press Start 2P'; text-align: center;">
@@ -17,10 +18,13 @@
         <br><br>
         <label for="defense">Defense:</label>
         <input type="text" name="defense" id="defense">
-        <br>
-        <br>
-        <input type="submit" value="Submit">
+        <br><br>
+        <label for="img-url">Image URL:</label>
+        <input type="text" name="img" id="img">
+        <br><br>
+        <input type="submit" value="Submit" id="new-submit">
     </form>
+</div>
 
 
     

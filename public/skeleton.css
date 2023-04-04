@@ -41,6 +41,13 @@
   float: left;
   box-sizing: border-box; }
 
+.show-container {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
@@ -241,6 +248,19 @@ input[type="button"].button-primary:focus {
   background-color: #1EAEDB;
   border-color: #1EAEDB; }
 
+#new-submit {
+  background-color: white;
+}
+
+#new-submit:hover {
+  background-color:#FF0000;
+  color: #3B4CCA;
+  text-shadow:
+    -1px -1px 0 #FFDE00,  
+    1px -1px 0 #FFDE00,
+    -1px 1px 0 #FFDE00,
+    1px 1px 0 #FFDE00; 
+}
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -445,8 +465,8 @@ hr {
   background-color: #FFDE00;
   padding-bottom: 100%;
   text-align: center;
+  padding-top: 1px;
 }
-
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

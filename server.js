@@ -31,6 +31,22 @@ app.get('/pokedex/:id', (req, res) => {
     res.render('show.ejs', {eachPokemon: eachPokemon, idx: req.params.id})
 });
 
+app.post('/pokedex', (req, res) => {
+    let newPokemon = {
+        name: req.body.name,
+        type: req.body.type,
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense
+        },
+        img: req.body.img,
+    }
+    res.redirect('/pokedex');
+    pokemon.unshift(newPokemon);
+    console.log(newPokemon)
+})
+
 
 app.listen(4000, () => {
     console.log('listening on port 4000')

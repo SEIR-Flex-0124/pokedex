@@ -1,9 +1,14 @@
 <%- include('./header.ejs') %>
-    <h1><%=eachPokemon.name%></h1>
-    <h1>Type: <br> <%=eachPokemon.type[0]%> <br> <%=eachPokemon.type[1]%></h1>
+<div class="show-container" style="font-family: 'Press Start 2P';">
+    <h2><%=eachPokemon.name%></h2>
+    <img class="pokemon-show-img" src=<%= eachPokemon.img %> alt=<%=eachPokemon.name%>>
+    <br>
+    <button>Edit</button> <button>Delete</button>
+    <h1>Type: <br> <%=eachPokemon.type%></h1>
     <h1>HP: <%=eachPokemon.stats.hp%></h1>
     <h1>Attack: <%=eachPokemon.stats.attack%></h1>
     <h1>Defense: <%=eachPokemon.stats.defense%></h1>
-            <img class="pokemon-show-img" src=<%= eachPokemon.img %> alt=<%=eachPokemon.name%>>
+            
+</div>
 </body>
 </html>
