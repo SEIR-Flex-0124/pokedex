@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     Pokemon.push(req.body)
-    res.redirect('/pokemon')
+    res.redirect(`/pokemon/${Pokemon.length - 1}`)
 })
 
 module.exports = router;
