@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Basic Pokémon:</h1>
+   <h2> <%= pokemonCard.name %> </h2>
+    <br>
+    <img src="<%= pokemonCard.img %>" alt="pokemon image">
+    <br>
+    <h3>Type:</h3>
+    <% for(let i = 0; i < pokemonCard.type.length; i++) { %>
+   <h4> <%= pokemonCard.type[i] %> </h4>
+    <% } %>
+    <br>
+    <h3>Stats</h3>
+    <h4>Hit Points:</h4>
+    <%= pokemonCard.stats.hp %>
+    <br>
+    <h4>Attack:</h4>
+    <%= pokemonCard.stats.attack %>
+    <br>
+    <h4>Defense:</h4>
+    <%= pokemonCard.stats.defense %>
+    <br>
+    <h4>Special Attack:</h4>
+    <%= pokemonCard.stats.spattack %>
+    <br>
+    <h4>Special Defense:</h4>
+    <%= pokemonCard.stats.spdefense %>
+    <br>
+    <h4>Speed:</h4>
+    <%= pokemonCard.stats.speed %>
+    
+
+</body>
+</html>

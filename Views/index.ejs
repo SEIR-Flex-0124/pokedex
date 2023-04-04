@@ -8,7 +8,8 @@
 </head>
 <body>
     <% for(let i = 0; i < 11; i++) { %>
-    <h1> <img src="<%= Pokemon[Math.floor(Math.random() * Pokemon.length)].img %>" alt="pokemon images"> </h1>
+        <% let idx = Math.floor(Math.random() * Pokemon.length) %>
+    <h1> <a href="/pokemon/<%= [idx] %>"><img src="<%= Pokemon[idx].img %>" alt="pokemon images"> </a> </h1>
     <% } %>
 </body>
 </html>
