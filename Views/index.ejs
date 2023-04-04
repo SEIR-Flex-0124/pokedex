@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <button><a href="/pokemon/new">Add to Pokédex</a></button>
     <% for(let i = 0; i < 11; i++) { %>
         <% let idx = Math.floor(Math.random() * Pokemon.length) %>
     <h1> <a href="/pokemon/<%= [idx] %>"><img src="<%= Pokemon[idx].img %>" alt="pokemon images"> </a> </h1>
