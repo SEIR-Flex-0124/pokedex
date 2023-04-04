@@ -170,12 +170,12 @@ p {
   color: black;
 }
 .pokedex-img:hover {
-  color: red;
+  color: #3B4CCA;
   text-shadow:
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 #FFDE00,  
+    1px -1px 0 #FFDE00,
+    -1px 1px 0 #FFDE00,
+    1px 1px 0 #FFDE00;
 }
 
 
@@ -213,9 +213,12 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
-  border-color: #888;
-  outline: 0; }
+  color: #3B4CCA;
+  text-shadow:
+    -1px -1px 0 #FFDE00,  
+    1px -1px 0 #FFDE00,
+    -1px 1px 0 #FFDE00,
+    1px 1px 0 #FFDE00; }
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
@@ -299,6 +302,10 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal; }
+
+.add-pokemon-form {
+  text-align: center;
+}
 
 
 /* Lists
