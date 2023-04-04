@@ -12,16 +12,19 @@
 <body>
 
         <div class="heading-container">
-            <h2>Pokedex</h2>
+            <a class='pokedex-img' href="http://localhost:4000/pokedex/">
+                <h2>Pokedex</h2>
+            </a>
             <button id="addapokemon">Add a Pokemon</button>
         </div>
     <div class="card-background">
         <div class="pokemon-card">
-    <% for (let i=0; i < 8;i++) { %>
-        <img class="pokemon-img" src=<%= pokemon[i].img %> alt=<%=pokemon[i].name%>>
-     <% } %>
-    </div>
-    </div>
-
+            <% for (let i=0; i < 8;i++) { %>
+                <a class="card-link" href="http://localhost:4000/pokedex/<%= i %>">
+                    <img class="pokemon-img" src=<%= pokemon[i].img %> alt=<%=pokemon[i].name%>>
+                </a>
+                 <% } %>
+            </div>
+        </div>
 </body>
 </html>

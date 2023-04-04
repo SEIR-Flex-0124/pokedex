@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Show Sample Text</h1>
-    <h1>
-
-        
-    </h1>
+<%- include('./header.ejs') %>
+    <h1><%=eachPokemon.name%></h1>
+    <h1>Type: <br> <%=eachPokemon.type[0]%> <br> <%=eachPokemon.type[1]%></h1>
+    <h1>HP: <%=eachPokemon.stats.hp%></h1>
+    <h1>Attack: <%=eachPokemon.stats.attack%></h1>
+    <h1>Defense: <%=eachPokemon.stats.defense%></h1>
+            <img class="pokemon-show-img" src=<%= eachPokemon.img %> alt=<%=eachPokemon.name%>>
 </body>
 </html>

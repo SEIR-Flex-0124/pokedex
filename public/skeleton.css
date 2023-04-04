@@ -157,10 +157,26 @@ p {
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-a {
-  color: #1EAEDB; }
-a:hover {
-  color: #0FA0CE; }
+/* a {
+  color: #1EAEDB; } */
+/* a:hover {
+  color: #0FA0CE; } */
+
+.card-link {
+  color:transparent;
+}
+
+.pokedex-img {
+  color: black;
+}
+.pokedex-img:hover {
+  color: red;
+  text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
 
 
 /* Buttons
@@ -398,24 +414,30 @@ hr {
   font-family: 'Press Start 2P'
 }
 
+#addapokemon-header, #backtopokedex {
+  float: right;
+  margin-top: 25px;
+  margin-right: 25px;
+  font-family: 'Press Start 2P';
+}
+
 .pokemon-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   width: 75%;
   margin: auto;
 }
 
 .pokemon-img {
-  margin-top: 20px;
+  margin-top: 50px;
   border: 2px solid black;
   border-radius: 10px;
-  width: 22%;
+  width: 20%;
+  height: 200px;
 }
 
 .card-background {
   background-color: #FFDE00;
-  padding-bottom: 20px;
+  padding-bottom: 100%;
+  text-align: center;
 }
 
 
