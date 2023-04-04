@@ -1,0 +1,6 @@
+<%- include('../partials/header.ejs', {name: "Are you sure you want to DELETE " + pokemons.name + "?"}) %>
+
+<form method="POST" action="/books/<%= pokemons.id %>?_method=DELETE">
+    <input type="submit" value="Are you sure you want to delete <%= pokemons.name %>?">
+</form>
+<%- include('../partials/footer.ejs') %>

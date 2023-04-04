@@ -1,0 +1,9 @@
+<%- include ('./partials/header.ejs') %>
+    <h2>Pokemon Selected</h2>
+    <h1><%= pokemons.name %></h1>
+    <img src=<%= pokemons.img %> alt="pokemon picture">
+    <h4>ID: <%= pokemons.id %></h3>
+    <h4>Type: <%= pokemons.type %></h3>
+    <a href="/pokemon/edit/<%= idx %>">Edit</a>
+    <a href="/pokemon/delete/<%= idx %>">DELETE</a>
+<%- include('./partials/footer.ejs') %>
