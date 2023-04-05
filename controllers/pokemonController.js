@@ -26,8 +26,18 @@ const editPokemon = (req, res) => {
 }
 
 const submitEdit = (req, res) => {
-    pokemon[req.params.id] = req.body;
-    res.redirect('/pokemon')
+    const id = req.params.id
+    const updatedPokemon = req.body
+    let foundPokemon = false
+    pokemon.forEach((poke, index)=>{
+        if(poke.id === id) {
+            foundPokemon = true;
+            pokemon[index] = Object.assign({}, poke, updatedPokemon)
+            singlePokemon = poke
+            res.redirect(`/pokemon/${id}`)
+        }
+    })
+   
 }
 
 const deletePokemon = (req, res) => {
