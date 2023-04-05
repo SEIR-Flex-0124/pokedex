@@ -1,0 +1,64 @@
+
+<%- include('./header.ejs') %>
+<body>
+    <style>
+        body{
+            background-color:#3c5aa6;
+        }
+        .container{
+            border: 10px solid #ffcb05;
+            border-radius: 2em;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+    <div class="container">
+        <h1 style="color:#ffcb05; ">New Pokemon</h1>
+    <form class='row g-3' method="POST" action="/create">
+        <div class="col-md-12"><label for="name">Name: </label>
+            <input type="text" placeholder='Name' name="name" id="name" class="form-control"></div>
+        
+        <div class="col-md-6">
+        <label for="inputEmail4">Weight: </label>
+        <input type="text" placeholder='weight' name="weight" id="inputEmail4" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <label for="height">height: </label>
+            <input type="text" placeholder='height' name="height" id="height" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <label for="classification">Classification: </label>
+            <input type="text" placeholder='classification' name="classification" id="classification" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label for="type">Type: </label>
+            <input type="text" placeholder='Type' name="type" id="type" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label for="normal">normal ability: </label>
+            <input type="text" placeholder='normal' name="normal" id="normal" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label for="hidden">hidden ability: </label>
+            <input type="text" placeholder='hidden' name="hidden" id="hidden" class="form-control">
+        </div>
+
+
+        <div class="col-md-12">
+            <label for="img">Image URL: </label>
+            <input type="text" placeholder='URL' name="img" id="img" class="form-control">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Add New Pokemon</button>
+        </div>
+        
+        
+    </form>
+    </div>
+    
+</body>
+</html>

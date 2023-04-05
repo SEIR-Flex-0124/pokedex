@@ -1,0 +1,42 @@
+<%- include('./header.ejs') %>
+<head>
+    <title>Pokedex</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: #3c5aa6 ;
+        }
+        .col-sm-2{
+            background-color: white;
+            margin: 15px 30px;
+            border: 10px solid #ffcb05;
+            border-radius: 1em;
+            display: flex;
+            justify-content: space-around;
+        }
+        .button{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: #ffcb05
+        }
+    </style>
+    <div class="container-fluid">
+
+        <div class="row">
+        <% for(let i=0; i<pokemon.length; i++) { %>
+        <div class="col-sm-2">
+            <div><h6><%=pokemon[i].name %></h6>
+            <a href='/pokemon/<%=i%>'><img src="<%=pokemon[i].img %>" width="100px", height="100px"></a>
+            </div>
+            <div class="button"><button type="submit" class="btn btn-outline-warning"><a href='/pokemon/<%=i%>/edit'>Edit</a></button>
+                <form action="/pokemon/<%=i %>?_method=DELETE" method="POST"> <button type="submit" value="DELETE" class="btn btn-outline-danger">DELETE</button></form>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    </div>
+    
+</body>
+</html>
