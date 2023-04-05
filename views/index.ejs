@@ -1,0 +1,13 @@
+<%- include('./header.ejs') %>
+<!-- <button onclick = "window.location.href='http://localhost:4000/pokemon/new';">Make New</button>  -->
+<div class = "cont">
+<div class="container">
+  <% for (let i = 0; i <Pokemon.length ; i++){ %>
+    <div style = "display: inline-block" class="grid-item"><a href = "/pokemon/<%= Pokemon[i].id%>"><img style = "width: 50px"  class = "individual" src = "<%= Pokemon[i].img %>"></a> 
+    </div>
+<% } %>
+   
+  </div>
+</div>
+</body>
+</html>

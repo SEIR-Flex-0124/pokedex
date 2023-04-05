@@ -1,0 +1,32 @@
+<%- include('./header.ejs') %>
+<div>
+<h1>
+    Pokedex Entry: <%= singlePokemon.id %></h1>
+    <div class="container">
+        <img src = "<%= singlePokemon.img %>">
+        <h3><%= singlePokemon.name%></h3>
+        <h4>"The <%= singlePokemon.misc.classification %>"</h4>
+        <h2>Types:  </h2>
+            <h5><ul>
+                <% for (let i = 0; i < singlePokemon.type.length; i++) 
+                {%>
+                    <li style = "list-style: none;"><%= singlePokemon.type[i]%></li>
+                <%}%>
+            </ul>
+       </h5>
+       <h4>
+        Height:<%= singlePokemon.misc.height %>
+        Weight: <%= singlePokemon.misc.weight %>
+       </h4>
+       Abilities: <%= singlePokemon.misc.abilities.normal %>,  <%= singlePokemon.misc.abilities.hidden %> 
+    </div>
+   
+
+    <form action="/pokemon/<%=index; %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+    </form>
+    <button onclick = "window.location.href='http://localhost:4000/pokemon/<%=index; %>/edit';">edit pokemon</button>
+    <button onclick = "window.location.href='http://localhost:4000/pokemon';">Return to Home</button> 
+</div>
+</body>
+</html>
