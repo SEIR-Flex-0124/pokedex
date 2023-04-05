@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet/main.css" />
+    <title>Edit</title>
+</head>
+<body>
+    <main>
+        <div id="showTop">
+            <h1>Edit Pokemon: <%= pokemon.name %></h1>
+        </div>
+
+        <div id="editMid">
+            <img src=<%= pokemon.img %> alt="pokemon pic" height="200px">
+        </div>
+
+        <div id="editBottom">
+            <form action="/pokemon/<%= index%>?_method=PUT" method="POST">
+                Name: <input type="text" name="name" value="<%= pokemon.name %>">
+                <br>
+                <input type="submit" name="" value="Edit"/>
+            </form>
+
+            <form action="/pokemon/<%= index%>?_method=PUT" method="POST">
+                Type: <input type="text" name="type" value="<%= pokemon.type %>">
+                <br>
+                <input type="submit" name="type" value="Edit"/>
+            </form>
+
+        </div>
+
+    </main>      
+    
+</body>
+</html>

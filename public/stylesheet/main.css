@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FACD04;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+/* Index */
+#pokemonLogo {
+    background-image: url(./img/International_Pokémon_logo.svg.png);
+    width: 500px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-items:center;
+    margin-top: 50px;
+
+}
+
+#newButtonDiv {
+    height: 25px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+
+Button{
+    width: 150px;
+    height: 25px;
+    background-color: red;
+    border: black solid 3px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#showButton{
+    width: 150px;
+    height: 25px;
+    background-color: #FACD04;
+    border: white solid 3px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#allPokemonPic {
+    width: 1000px;
+    height: 2200px;
+    margin: 20px;
+    background-color: white;
+    padding: 30px;
+    border: red solid 5px;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+
+/* Show */
+
+main {
+    width: 650px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    align-items: center;
+    border: black 5px solid;
+    border-radius: 25px;
+    justify-content: center;
+    background-color: red;
+}
+
+h1 {
+    padding-left: 10px;
+}
+
+#showTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    height: 100px;
+    background-color: red;
+    align-items: center;
+    
+}
+
+#showMid {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    border-radius: 25px;
+}
+
+#showBottom {
+    width: 600px;
+    height: 50px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+}
+
+#editMid {
+    width: 600px;
+    height: 250px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#editBottom {
+    width: 600px;
+    height: 250px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

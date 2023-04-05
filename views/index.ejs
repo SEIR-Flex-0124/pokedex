@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet/main.css" />
+    <title>All Pokemons</title>
+</head>
+<body>
+    <div id="pokemonLogo"></div>
+
+    <div id="newButtonDiv">
+        
+            
+            <button id="newButton" onclick = "window.location.href='http://localhost:3000/pokemon/new/';">NEW POKEMON</button>
+        
+    </div>
+
+    <div id="allPokemonPic"><% for(let i=0; i<pokemons.length; i++) { %>
+
+        <a href="/pokemon/<%= i %>"><img src=<%= pokemons[i].img %> alt="pokemon pic" height="100px"></a>
+        
+    <% } %> </div>
+</body>
+</html>

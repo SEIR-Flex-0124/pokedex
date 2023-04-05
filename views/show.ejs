@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet/main.css" />
+    <title>Each Pokemon</title>
+</head>
+
+
+<body>
+    <main>
+        <div id="showTop">
+            <h1> <%= pokemon.name %></h1>
+            <button id="showButton" onclick = "window.location.href='http://localhost:3000/pokemon';">Back</button>
+
+        </div>
+
+        <div id="showMid">
+
+            <div><img src=<%= pokemon.img %> alt="pokemon pic" height="200px"></div>
+
+            <div>
+                <p>Type:</p>
+                <ul>
+                    <% for(let i=0; i<pokemon.type.length; i++) { %>
+                    <li><%=pokemon.type[i] %></li>
+                    <% } %>
+                </ul>
+            </div>
+
+            <div>
+                <p>Stats:
+                    <ul>
+                        <% for(const stat in pokemon.stats) { %>
+                            <li><%= stat%>: <%=pokemon.stats[stat] %></li>
+                        <% } %>                
+                    </ul>
+                </p>
+                
+            </div>
+
+        </div>
+
+        <div id="showBottom">
+
+            <div>
+                <button id="showButton" onclick = "window.location.href='http://localhost:3000/pokemon/<%= pokemon.id%>/edit';">EDIT</button>
+            </div>
+
+            <div>
+                <form action="/pokemon/<%= pokemon.id%>?_method=DELETE" method="POST">
+                    <button id="showButton" type="submit" value="DELETE">DELETE</button>
+                </form>         
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
