@@ -42,7 +42,15 @@ router.post('/', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
     const idx = req.params.id
-    res.render('edit.ejs', {idx})
+    let pokemonToBeEdited = Pokemon[idx]
+    res.render('edit.ejs', {pokemonToBeEdited, idx})
+})
+
+router.put('/:id', (req, res) => {
+    let updatedPokemon = req.body;
+    let idx = req.params.id
+    Pokemon[idx] = updatedPokemon
+    res.redirect('/pokemon')
 })
 
 module.exports = router;

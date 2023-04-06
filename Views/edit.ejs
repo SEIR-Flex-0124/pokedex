@@ -7,32 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="/pokemon/<%= idx =%>?_method=PUT">
-        <input type="text" name="id" placeholder="ID: number">
+    <h1>You are editting <%= pokemonToBeEdited.name %>. </h1>
+    <form method="post" action="/pokemon/<%= idx %>?_method=PUT">
+        <input type="text" name="id" value=<%= pokemonToBeEdited.id %>>
         <br>
-        <input type="text" name="name" placeholder="Pokemon name">
+        <input type="text" name="name" value=<%= pokemonToBeEdited.name %>>
         <br>
-        <input type="text" name="img" placeholder="Image URL">
+        <input type="text" name="img" value=<%= pokemonToBeEdited.img %>>
         <br>
-        <input type="text" name="type" placeholder="Pokemon type">
+        <input type="text" name="type" value=<%= pokemonToBeEdited.type %>>
         <br>
-        <input type="text" name="hp" placeholder="hp">
+        <input type="text" name="hp" value=<%= pokemonToBeEdited.stats.hp %>>
         <br>
-        <input type="text" name="attack" placeholder="attack">
+        <input type="text" name="attack" value=<%= pokemonToBeEdited.stats.attack %>>
         <br>
-        <input type="text" name="defense" placeholder="defense">
+        <input type="text" name="defense" value=<%= pokemonToBeEdited.stats.defense %>>
         <br>
-        <input type="text" name="spattack" placeholder="spattack">
+        <input type="text" name="spattack" value=<%= pokemonToBeEdited.stats.spattack %>>
         <br>
-        <input type="text" name="spdefense" placeholder="spdefense">
+        <input type="text" name="spdefense" value=<%= pokemonToBeEdited.stats.spdefense %>>
         <br>
-        <input type="text" name="speed" placeholder="speed">
+        <input type="text" name="speed" value=<%= pokemonToBeEdited.stats.speed %>>
         <br>
-        <input type="text" name="moves" placeholder="Moves">
-        <br>
-        <input type="Submit" placeholder="Submit">
+        <input type="Submit" value= "Edit <%= pokemonToBeEdited.name %>" >
     </form>
-
 
 </body>
 </html>
