@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete <%= pokemonToBeDeleted.name %>? </h1>
+    <form method="post" action="/pokemon/<%= idx %>?_method=DELETE">
+
+        <input type="Submit" value= "Yes, Delete." >
+    </form>
+<a href="/pokemon"><button>No, take me home.</button></a>
+
+</body>
+</html>

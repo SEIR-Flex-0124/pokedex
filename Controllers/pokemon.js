@@ -53,5 +53,17 @@ router.put('/:id', (req, res) => {
     res.redirect('/pokemon')
 })
 
+router.get('/:id/delete', (req, res) => {
+    const idx = req.params.id
+    let pokemonToBeDeleted = Pokemon[idx]
+    res.render('delete.ejs', {pokemonToBeDeleted, idx})
+})
+
+router.delete('/:id', (req, res) => {
+    const idx = req.params.id
+    Pokemon.splice(idx, 1);
+    res.redirect('/pokemon')
+})
+
 module.exports = router;
 
