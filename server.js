@@ -10,6 +10,7 @@ const pokemonController = require('./Controllers/pokemon');
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
 
 
 //controller 

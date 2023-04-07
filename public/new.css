@@ -1,0 +1,56 @@
+.background {
+background-image: url('https://w0.peakpx.com/wallpaper/945/500/HD-wallpaper-pokemon-gotta-catch-em-all-gotta-pokemon-catch-all.jpg');
+background-repeat: no-repeat;
+ background-position: center;
+ background-size: contain;
+height: 100vh;
+width: 100vw;
+display: flex;
+margin: 0;
+/* flex-direction: column; */
+align-items: center; 
+justify-content: center;
+align-items: flex-start;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    color: blue;
+    
+}
+
+.divForm {
+
+display: flex;
+align-items: center;
+flex-direction: column;
+margin: 0 auto;
+
+}
+
+
+
+input[type="text"] {
+    padding: 7px 5px;
+    margin: 8px 0;
+    border: 3px solid blue;
+}
+
+input[type="Submit"] {
+    padding: 7px 55px;
+    margin: 8px 0;
+    background-color: yellow;
+    border: 3px solid blue;
+}
+
+button {
+    padding: 7px 20px;
+    margin: 8px 0;
+    background-color: yellow;
+    border: 3px solid blue;
+}
+
+button:hover {
+    background-color: #4CAF50;
+  }
