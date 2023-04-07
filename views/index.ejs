@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Pokemons</title>
+<style>
+.grid-container {
+  
+  grid-template-columns: auto auto auto;
+  background-color: #f26f04;
+  padding: 10px;
+}
+</style>
+</head>
+
+<body style = "background-color: red;">
+    <h1 style = "text-align: center;">POKEDEX</h1>
+    <div class ="grid-container">
+    <% for(let i = 0; i < pokemon.length; i++) { %>
+        <img src=<%= pokemon[i].img %> alt="pokemon picture" width="100">
+        <a href="/pokemon/<%= i %>">
+            
+            <h3><%= pokemon[i].name %></h3>
+        </a>
+        <h3><%= pokemon[i].type %></h3>
+        
+    <form action="/pokemon/<%=i; %>?_method=DELETE" method="DELETE">
+        <input type="submit" value="DELETE">
+    </form>
+    <hr>
+    <% } %>
+    </div>
+</body>
+</html>
