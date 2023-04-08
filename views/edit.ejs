@@ -1,5 +1,5 @@
 <%- include('./partials/header.ejs') %>
-<h1>Create a new Pokemon:</h1>
+<h1>Edit this Pokemon:</h1>
 <form method="POST" action="/pokemon/<%= idx %>?_method=PUT">
     <label for="name">Name: </label>
     <input type="text" name="name" id="name" value=<%= pokemonToBeEdited.name %>>
@@ -12,17 +12,13 @@
     <br>
     <label for="stats">Stats: </label>
     <label for="stats">attack </label>
-    <input type="text" name="attack" id="attack" value=<%= pokemonToBeEdited.stats.attack %>>
+    <input type="number" name="attack" id="attack" value=<%= pokemonToBeEdited.stats.attack %>>
     <label for="stats">defense </label>
-    <input type="text" name="defense" id="defense" value=<%= pokemonToBeEdited.stats.defense %>>
+    <input type="number" name="defense" id="defense" value=<%= pokemonToBeEdited.stats.defense %>>
     <label for="stats">speed </label>
-    <input type="text" name="speed" id="speed" value=<%= pokemonToBeEdited.stats.speed %>>
+    <input type="number" name="speed" id="speed" value=<%= pokemonToBeEdited.stats.speed %>>
     <br>
-    <input type="submit" value="Add new Pokemon">
+    <input type="submit" value="Save Pokemon">
 </form>
-
-
-
-
 
 <%- include('./partials/footer.ejs') %>

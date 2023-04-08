@@ -11,6 +11,8 @@
 <p>attack: <%= singlePoke.stats.attack %></p>
 <p>defense: <%= singlePoke.stats.defense %></p>
 <p>speed: <%= singlePoke.stats.speed %></p>
+<a href="/pokemon/<%= idx %>/edit">Edit Pokemon</a>
+<a href="/pokemon/<%= idx %>/delete">Delete Pokemon</a>
 <a href="/pokemon">Back to full Pokedex</a> 
 <br>
 <%- include('./partials/footer.ejs') %>
