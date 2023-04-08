@@ -43,7 +43,16 @@ router.get('/pokemon/:id/edit', (req, res) => {
 })
 
 router.put('/pokemon/:id', (req, res) => {
-    let updatedPokemon = req.body;
+    let updatedPokemon = {
+        name: req.body.name,
+        img: req.body.img,
+        type: [req.body.type],
+        stats: {
+            attack: req.body.attack,
+            defense: req.body.defense,
+            speed: req.body.speed,
+        }
+    };
     console.log(updatedPokemon);
     pokemon[req.params.id] = updatedPokemon;
     res.redirect(`/pokemon/${req.params.id}`);
