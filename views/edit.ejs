@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %>
+<h1>Edit this Pokemon:</h1>
+<img src=<%= pokemonToBeEdited.img %> alt="pokemonToBeEdited image">
+<form method="POST" action="/pokemon/<%= idx %>?_method=PUT">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" value=<%= pokemonToBeEdited.name %>>
+    <br>
+    <label for="type">Type: </label>
+    <input type="text" name="type" id="type" value=<%= pokemonToBeEdited.type %>>
+    <br>
+    <label for="img">Image URL: </label>
+    <input type="text" name="img" id="img" value=<%= pokemonToBeEdited.img %>>
+    <br>
+    <label for="stats">Stats: </label>
+    <label for="attack">attack </label>
+    <input type="number" name="attack" id="attack" value=<%= pokemonToBeEdited.stats.attack %>>
+    <label for="defense">defense </label>
+    <input type="number" name="defense" id="defense" value=<%= pokemonToBeEdited.stats.defense %>>
+    <label for="speed">speed </label>
+    <input type="number" name="speed" id="speed" value=<%= pokemonToBeEdited.stats.speed %>>
+    <br>
+    <input type="submit" value="Save Pokemon">
+</form>
+
+<%- include('./partials/footer.ejs') %>
