@@ -1,0 +1,22 @@
+<%- include('./header.ejs', {name: 'Delete ' + deletePokemon.name}) %>
+    <title>Delete Pokemon</title>
+<body>
+    <div class="card-background">
+    <div class="show-container" style="font-family: 'Press Start 2P';">
+    <br> <br> <br>
+    <h1>You're about to delete:</h1>
+    <img src=<%= deletePokemon.img %> alt='pokemon image'>
+    <form method="POST" action="/<%= idx %>?_method=DELETE" >
+        <input type="submit" value="Are you sure you want to delete?">
+    </form>
+<h2>Name: <%= deletePokemon.name %></h2>
+<h2>Type: <%= deletePokemon.color %></h2>
+<h2>HP: <%= deletePokemon.stats.hp %></h2>
+<h2>Attack: <%= deletePokemon.stats.attack%></h2>
+<h2>Defense: <%= deletePokemon.stats.defense%></h2>
+</body>
+</html>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<%- include('./header.ejs') %>
+<div class="card-background">
+<div class="show-container" style="font-family: 'Press Start 2P';">
+    <br>
+    <h2><%=eachPokemon.name%></h2>
+    <img class="pokemon-show-img" src=<%= eachPokemon.img %> alt=<%=eachPokemon.name%>>
+    <br>
+    <a href="/<%= idx %>/edit">Edit</a> <a href="/<%= idx %>/delete">Delete</a>
+    <h1>Type: <br> <%=eachPokemon.type%></h1>
+    <h1>HP: <%=eachPokemon.stats.hp%></h1>
+    <h1>Attack: <%=eachPokemon.stats.attack%></h1>
+    <h1>Defense: <%=eachPokemon.stats.defense%></h1>
+</div>         
+</div>
+</body>
+</html>

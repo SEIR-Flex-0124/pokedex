@@ -1,0 +1,32 @@
+<%- include('./header.ejs', {name: 'Edit' + editPokemon.name}) %>
+<div class="card-background">
+    <div class="show-container" style="font-family: 'Press Start 2P';">
+<title>Delete Pokemon</title>
+    <form method='POST' action='/<%= idx %>?_method=PUT'>
+        <h1>Edit a Pokemon:</h1>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value=<%= editPokemon.name %>>
+        <br>
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" value=<%= editPokemon.type %>>
+        <br>
+        <label for="stats">Stats:
+        <label for="hp">HP:</label>
+        <input type="number" name="hp" id="hp" value=<%= editPokemon.stats.hp %>>
+        <br>
+        <label for="attack">Attack</label>
+        <input type="number" name="attack" id="attack" value=<%= editPokemon.stats.attack %>>
+        <br>
+        <label for="defense">Defense</label>
+        <input type="number" name="defense" id="defense" value=<%= editPokemon.stats.defense %>>
+    </label>
+        <br>
+        <label for="img">Image URL:</label>
+        <input type="text" name="img" id="img" value=<%= editPokemon.img %>>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</div>
+</body>
+</html>
