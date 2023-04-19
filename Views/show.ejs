@@ -8,33 +8,45 @@
     <title>Document</title>
 </head>
 <body class="background">
-    <div class="pokemonCard">
-   <h1>Basic Pokémon: <%= pokemonCard.id %></h1>
-   <h2>Pokémon name: <%= pokemonCard.name %> </h2>
-    <br>
-    <img src="<%= pokemonCard.img %>" alt="pokemon image">
-    <br>
-    <h3>Type:</h3>
-    <% for(let i = 0; i < pokemonCard.type.length; i++) { %>
-   <h4> <%= pokemonCard.type[i] %> </h4>
-    <% } %>
-    <h3>Stats</h3>
-    <h4>Hit Points:</h4>
-    <%= pokemonCard.stats.hp %>
-    <h4>Attack:</h4>
-    <%= pokemonCard.stats.attack %>
-    <h4>Defense:</h4>
-    <%= pokemonCard.stats.defense %>
-    <h4>Special Attack:</h4>
-    <%= pokemonCard.stats.spattack %>
-    <h4>Special Defense:</h4>
-    <%= pokemonCard.stats.spdefense %>
-    <h4>Speed:</h4>
-    <%= pokemonCard.stats.speed %>
-    <br>
+    <div class="cardContainer">
+        <div class="pokemonCard">
+            <div id="pokemonInfo1">
+                <h1>Basic Pokémon: <%= pokemonCard.id %></h1>
+                <h2>Pokémon name: <%= pokemonCard.name %> </h2>
+            </div>
+            <br>
+            <img src="<%= pokemonCard.img %>" alt="pokemon image">
+            <br>
+            <div id="pokemonInfo2">
+                <h3 id="type">Type:</h3>
+                   <% for(let i = 0; i < pokemonCard.type.length; i++) { %>
+                    <%= pokemonCard.type[i] %>
+                    <% } %>
+            </div>
+            <div id="pokemonInfo3">
+                <h3>Stats</h3>
+                Hit Points:
+                <%= pokemonCard.stats.hp %>
+                Attack:
+                <%= pokemonCard.stats.attack %>
+                Defense:
+                <%= pokemonCard.stats.defense %>
+                Special Attack:
+                <%= pokemonCard.stats.spattack %>
+                Special Defense:
+                <%= pokemonCard.stats.spdefense %>
+                Speed:
+                <%= pokemonCard.stats.speed %>
+             </div>
+        <br>
+        </div>
+    </div>    
+    <div class="buttonDiv">
 <a href="/pokemon/<%= idx %>/edit"><button>Edit this Pokemon</button></a>   
 <a href="/pokemon/<%= idx %>/delete"><button>Delete this Pokemon</button></a>   
+<a href="/pokemon"><button>Back to your Pokédex!</button></a>
     </div>
+        
 
 </body>
 </html>

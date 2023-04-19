@@ -15,8 +15,8 @@ align-items: flex-start;
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 50px;
-    color: blue;
+    font-size: 60px;
+    color: #ffcd00;
     
 }
 
@@ -35,6 +35,7 @@ input[type="text"] {
     padding: 7px 5px;
     margin: 8px 0;
     border: 3px solid blue;
+    font-weight: bold;
 }
 
 input[type="Submit"] {
@@ -42,6 +43,7 @@ input[type="Submit"] {
     margin: 8px 0;
     background-color: yellow;
     border: 3px solid blue;
+    font-weight: bold;
 }
 
 button {
@@ -49,6 +51,7 @@ button {
     margin: 8px 0;
     background-color: yellow;
     border: 3px solid blue;
+    font-weight: bold;
 }
 
 button:hover {

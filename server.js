@@ -17,6 +17,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/pokemon', pokemonController)
 
+app.get('/*', (req, res) => {
+    res.render('404.ejs')
+})
+
 
 //listen
 
