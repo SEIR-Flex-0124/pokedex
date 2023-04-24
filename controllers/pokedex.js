@@ -23,4 +23,8 @@ router.post('/newPokemon', (req, res) => {
     res.redirect('/');
   })
 
+router.delete('/pokemon/:id', (req, res) => {
+	pokemon.splice(req.params.id, 1); //remove the item from the array
+	res.redirect('/');  //redirect back to index route
+});
 module.exports = router;
