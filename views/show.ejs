@@ -1,0 +1,8 @@
+<%- include('../header.ejs', {name: pokemon.color + " " + pokemon.name}) %>
+    <h1>This is my individual pokemon</h1>
+    <img src=<%= pokemon.image %> alt="Pokemon image">
+    <h2>Name: <%= pokemon.name %></h2>
+    <h2>Color: <%= pokemon.color %></h2>
+    <h2>Ready to eat? <%= pokemon.readyToEat %></h2>
+</body>
+</html>
