@@ -10,11 +10,11 @@ router.get('/pokemon/new', (req, res) => {
 });
 
 router.get('/pokemon/:id', (req, res) => {
-    console.log(req.params);
+    // console.log(req.params);
     // console.log(fruits);
-    const pokemon = pokemon[req.params.id];
-    console.log(pokemon);
-    res.render("pokemon/show.ejs", { pokemon: pokemon });
+    const tasty = pokemon[req.params.id];
+    // console.log(pokemon);
+    res.render("show.ejs", { tasty: tasty });
 })
 
 module.exports = router;
