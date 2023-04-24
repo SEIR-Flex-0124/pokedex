@@ -1,0 +1,18 @@
+<%- include('./header.ejs') %>
+
+<header>Create a New Pokemon Below!</header>
+<br>
+<form method="POST" action="/newPokemon">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+    <br>
+    <label for="img">Image URL:</label>
+    <input type="text" name="img" id="img">
+    <br>
+    <label for="type">Type:</label>
+    <input type="text" name="type" id="type">
+    <br>
+    <input type="submit" value="Create New Pokemon!"/>
+</form>
+</body>
+</html>

@@ -5,8 +5,8 @@ const router = express.Router();
 const pokemon = require('../models/pokemon');
 
 
-router.get('/pokemon/new', (req, res) => {
-    res.render('pokemon/new.ejs')
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
 });
 
 router.get('/pokemon/:id', (req, res) => {
@@ -16,5 +16,11 @@ router.get('/pokemon/:id', (req, res) => {
     // console.log(pokemon);
     res.render("show.ejs", { tasty: tasty });
 })
+
+router.post('/newPokemon', (req, res) => {
+    console.log(req.body);
+    pokemon.push({...req.body});
+    res.redirect('/');
+  })
 
 module.exports = router;
