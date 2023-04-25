@@ -1,0 +1,13 @@
+.contentBox {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 6px;
+}
+
+.my-custom-row {
+    background-size: cover;
+    height: 500px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+}
