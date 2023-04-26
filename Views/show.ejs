@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/show.css" type="text/css">
+    <title>Document</title>
+</head>
+<body class="background">
+    <div class="cardContainer">
+        <div class="pokemonCard">
+            <div id="pokemonInfo1">
+                <h1>Basic Pokémon: <%= pokemonCard.id %></h1>
+                <h2>Pokémon name: <%= pokemonCard.name %> </h2>
+            </div>
+            <br>
+            <img src="<%= pokemonCard.img %>" alt="pokemon image">
+            <br>
+            <div id="pokemonInfo2">
+                <h3 id="type">Type:</h3>
+                   <% for(let i = 0; i < pokemonCard.type.length; i++) { %>
+                    <%= pokemonCard.type[i] %>
+                    <% } %>
+            </div>
+            <div id="pokemonInfo3">
+                <h3>Stats</h3>
+                Hit Points:
+                <%= pokemonCard.stats.hp %>
+                Attack:
+                <%= pokemonCard.stats.attack %>
+                Defense:
+                <%= pokemonCard.stats.defense %>
+                Special Attack:
+                <%= pokemonCard.stats.spattack %>
+                Special Defense:
+                <%= pokemonCard.stats.spdefense %>
+                Speed:
+                <%= pokemonCard.stats.speed %>
+             </div>
+        <br>
+        </div>
+    </div>    
+    <div class="buttonDiv">
+<a href="/pokemon/<%= idx %>/edit"><button>Edit this Pokemon</button></a>   
+<a href="/pokemon/<%= idx %>/delete"><button>Delete this Pokemon</button></a>   
+<a href="/pokemon"><button>Back to your Pokédex!</button></a>
+    </div>
+        
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "node": "^19.8.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "pokedex",
+  "description": "# Pokedex",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobPaul710/pokedex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacobPaul710/pokedex/issues"
+  },
+  "homepage": "https://github.com/JacobPaul710/pokedex#readme"
+}

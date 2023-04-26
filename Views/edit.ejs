@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You are editting <%= pokemonToBeEdited.name %>. </h1>
+    <form method="post" action="/pokemon/<%= idx %>?_method=PUT">
+        <input type="text" name="id" value=<%= pokemonToBeEdited.id %>>
+        <br>
+        <input type="text" name="name" value=<%= pokemonToBeEdited.name %>>
+        <br>
+        <input type="text" name="img" value=<%= pokemonToBeEdited.img %>>
+        <br>
+        <input type="text" name="type" value=<%= pokemonToBeEdited.type %>>
+        <br>
+        <input type="text" name="hp" value=<%= pokemonToBeEdited.stats.hp %>>
+        <br>
+        <input type="text" name="attack" value=<%= pokemonToBeEdited.stats.attack %>>
+        <br>
+        <input type="text" name="defense" value=<%= pokemonToBeEdited.stats.defense %>>
+        <br>
+        <input type="text" name="spattack" value=<%= pokemonToBeEdited.stats.spattack %>>
+        <br>
+        <input type="text" name="spdefense" value=<%= pokemonToBeEdited.stats.spdefense %>>
+        <br>
+        <input type="text" name="speed" value=<%= pokemonToBeEdited.stats.speed %>>
+        <br>
+        <input type="Submit" value= "Edit <%= pokemonToBeEdited.name %>" >
+    </form>
+
+</body>
+</html>
